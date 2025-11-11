@@ -15,6 +15,7 @@ function AdminAbout() {
     description1: "",
     description2: "",
     skills: "",
+    resume: null,
   });
 
   useEffect(() => {
@@ -29,12 +30,12 @@ function AdminAbout() {
         });
         setCount(counter.data?.count);
 
-        
         const data = res.data.data;
         setFormData({
           description1: data.description1 || "",
           description2: data.description2 || "",
           skills: Array.isArray(data.skills) ? data.skills.join(", ") : "",
+          resume: null,
         });
       } catch (error) {
         console.error(error);
@@ -52,23 +53,32 @@ function AdminAbout() {
     }));
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData((prev) => ({ ...prev, resume: file }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const payload = {
-        ...formData,
-        skills: formData.skills
-          .split(",")
-          .map((skill) => skill.trim())
-          .filter(Boolean),
-      };
+      const payload = new FormData();
+      payload.append("description1", formData.description1);
+      payload.append("description2", formData.description2);
+      formData.skills
+        .split(",")
+        .map((skill) => skill.trim())
+        .filter(Boolean)
+        .forEach((skill) => payload.append("skills[]", skill));
+      if (formData.resume) payload.append("resume", formData.resume);
 
       const res = await axios.put(`${API_URL}/update-about`, payload, {
         withCredentials: true,
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
       message.success(res.data.message);
+      setFormData((prev) => ({ ...prev, resume: null }));
     } catch (error) {
       console.error(error);
       message.error(error.response?.data?.message || "Update failed");
@@ -120,6 +130,17 @@ function AdminAbout() {
           onChange={handleChange}
           required
           rows={2}
+        />
+      </div>
+      <div className="w-1/5">
+        <label>Resume</label>
+        <Input
+          type="file"
+          accept="application/pdf,image/*"
+          onChange={handleFileChange}
+          // onChange={(e) =>
+          //   setFormData({ ...formData, resume: e.target.files[0] })
+          // }
         />
       </div>
 

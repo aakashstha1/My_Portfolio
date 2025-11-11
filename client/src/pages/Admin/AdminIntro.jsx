@@ -15,7 +15,7 @@ function AdminIntro() {
     lastName: "",
     caption: "",
     description: "",
-    resume: "",
+    // resume: "",
   });
 
   useEffect(() => {
@@ -108,7 +108,7 @@ function AdminIntro() {
           rows={4}
         />
       </div>
-      <div>
+      {/* <div>
         <label>Resume URL</label>
         <Input
           name="resume"
@@ -129,7 +129,7 @@ function AdminIntro() {
             </a>
           </>
         )}
-      </div>
+      </div> */}
 
       <div className="flex justify-end">
         <button

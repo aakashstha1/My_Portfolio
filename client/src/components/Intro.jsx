@@ -1,32 +1,49 @@
 import axios from "axios";
 import Button from "./Button";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+
 function Intro() {
   const [introData, setIntroData] = useState({});
+  const [resumeURL, setResumeURL] = useState("");
   const API_URL = import.meta.env.VITE_API_URL;
-  const downloadRef = useRef(null);
 
   useEffect(() => {
-    const fetchIntro = async () => {
+    const fetchData = async () => {
       try {
-        const res = await axios.get(`${API_URL}/get-intro`);
-        setIntroData(res?.data?.data);
+        const introRes = await axios.get(`${API_URL}/get-intro`);
+        setIntroData(introRes.data.data);
+
+        const aboutRes = await axios.get(`${API_URL}/get-about`);
+        setResumeURL(aboutRes.data.data?.resume || "");
       } catch (error) {
-        console.error("Failed to fetch intro:", error);
+        console.error("Failed to fetch data:", error);
       }
     };
-    fetchIntro();
-  }, []);
 
-  const handleDownload = () => {
-    if (downloadRef.current) {
-      downloadRef.current.click();
+    fetchData();
+  }, [API_URL]);
+
+  const handleDownload = async () => {
+    if (!resumeURL) return;
+
+    try {
+      const response = await fetch(resumeURL);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+
+      link.download = "Aakash_Shrestha_CV.pdf";
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Failed to download resume:", error);
     }
   };
-
-  const fileName = introData.resume
-    ? decodeURIComponent(introData.resume.split("/").pop())
-    : "resume.pdf";
 
   return (
     <div className="h-[90vh] bg-primary flex flex-col items-start justify-center gap-8 p-6 sm:h-full">
@@ -42,25 +59,11 @@ function Intro() {
         {introData.description}
       </p>
 
-      {introData.resume && (
+      {resumeURL && (
         <div className="m-2">
-          <Button
-            text={"Open Resume"}
-            className="w-52 flex justify-center"
-            onClick={handleDownload}
-          />
+          <Button text="Download Resume" onClick={handleDownload} />
         </div>
       )}
-      <a
-        ref={downloadRef}
-        href={introData.resume}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hidden"
-        download={fileName}
-      >
-        Click
-      </a>
     </div>
   );
 }

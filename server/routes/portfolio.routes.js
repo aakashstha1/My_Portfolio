@@ -20,6 +20,7 @@ import {
   getVisitCount,
   incrementVisitCount,
 } from "../controllers/visit.controller.js";
+import { upload } from "../middleware/multerAsCloudinary.js";
 
 const router = express.Router();
 
@@ -37,7 +38,9 @@ router.route("/update-intro").put(authentication, updateIntro);
 
 //About routes
 router.route("/get-about").get(getAbout);
-router.route("/update-about").put(authentication, updateAbout);
+router
+  .route("/update-about")
+  .put(authentication, upload.single("resume"), updateAbout);
 
 //Contact routes
 // router.route("/get-contact").get(getContact);
