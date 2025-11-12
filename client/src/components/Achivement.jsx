@@ -1,7 +1,7 @@
 import { Carousel } from "antd";
 import SectionTitle from "./SectionTitle";
-import Lottie from "lottie-react";
-import certificate from "../assets/lottie/certificate.json";
+// import Lottie from "lottie-react";
+// import certificate from "../assets/lottie/certificate.json";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -31,15 +31,12 @@ function Achievement() {
         {/* Carousel */}
         <div className="flex flex-col gap-5 w-2/3 text-white p-5 sm:w-full sm:items-center">
           {achievements.length > 0 ? (
-            <Carousel
-              arrows
-              autoplay
-              dots={false}
-              autoplaySpeed={3000}
-              className=" h-100"
-            >
+            <Carousel arrows autoplay dots={false} autoplaySpeed={3000} className=" h-100">
               {achievements.map((achievement, index) => (
-                <div key={index} className="flex justify-center">
+                <div
+                  key={index}
+                  className="flex justify-center"
+                >
                   <img
                     src={achievement.imgURL || achievement.imageURL}
                     alt={achievement.title}
@@ -56,9 +53,9 @@ function Achievement() {
         </div>
 
         {/* Lottie animation */}
-        <div className="h-[50vh] w-1/3 flex sm:w-full sm:h-[30vh] justify-end sm:hidden">
-          <Lottie animationData={certificate} loop={true} />
-        </div>
+        {/* <div className="h-[50vh] w-1/3 flex sm:w-full sm:h-[30vh] justify-end sm:hidden">
+          <Lottie animationData={certificate} loop={true} autoPlay />
+        </div> */}
       </div>
     </div>
   );
