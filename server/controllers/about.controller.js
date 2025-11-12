@@ -32,19 +32,20 @@ export const updateAbout = async (req, res) => {
   try {
     const userId = req.userId;
     const { description1, description2, skills } = req.body;
-    const file = req.file;
-    console.log(file);
     let about = await About.findOne({ user: userId });
 
-    const resume = file?.path || file?.secure_url;
-    const publicId = file?.filename || file?.public_id;
+    if (req.file) {
+      const file = req.file;
+      const resume = file?.path || file?.secure_url;
+      const publicId = file?.filename || file?.public_id;
 
-    if (!resume || !publicId) {
-      console.error("Cloudinary upload failed:", file);
-      return res.status(500).json({
-        success: false,
-        message: "Image upload failed.",
-      });
+      if (!resume || !publicId) {
+        console.error("Cloudinary upload failed:", file);
+        return res.status(500).json({
+          success: false,
+          message: "Image upload failed.",
+        });
+      }
     }
 
     // If not found, create new
@@ -77,7 +78,7 @@ export const updateAbout = async (req, res) => {
       about.skills = skills;
     }
 
-    if (file) {
+    if (req.file) {
       about.resume = file.path || file.secure_url;
       about.cloudinaryId = file.filename || file.public_id;
     }
