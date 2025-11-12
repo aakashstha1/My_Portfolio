@@ -65,33 +65,35 @@ function Intro() {
         </motion.div>
       </div>
       <div className="w-1/3 flex items-center justify-center">
-        <motion.div
-          initial={{ scale: 0, opacity: 0, y: 100 }}
-          animate={{
-            scale: 1,
-            opacity: 1,
-            y: [0, -8, 0],
-          }}
-          transition={{
-            scale: {
-              type: "spring",
-              stiffness: 100,
-              damping: 12,
-              duration: 0.8,
-            },
-            opacity: { duration: 0.6 },
-            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-          }}
-          whileHover={{ rotate: 2, scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          className="w-[500px] h-[400px] sm:w-[200px] sm:h-[110px] glowing-circle rounded-full bg-[#1A1A1A] overflow-hidden sm:items-center sm:justify-center"
-        >
-          <img
-            src={introData?.imgURL}
-            alt="profile.png"
-            className="w-full h-full object-cover rounded-full"
-          />
-        </motion.div>
+        {introData?.imgURL && (
+          <motion.div
+            initial={{ scale: 0, opacity: 0, y: 100 }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+              y: [0, -8, 0],
+            }}
+            transition={{
+              scale: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12,
+                duration: 0.8,
+              },
+              opacity: { duration: 0.6 },
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            }}
+            whileHover={{ rotate: 2, scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            className="w-[500px] h-[400px] sm:w-[200px] sm:h-[110px] glowing-circle rounded-full bg-[#1A1A1A] overflow-hidden sm:items-center sm:justify-center"
+          >
+            <img
+              src={introData?.imgURL}
+              alt="profile.png"
+              className="w-full h-full object-cover rounded-full"
+            />
+          </motion.div>
+        )}
       </div>
     </div>
   );
