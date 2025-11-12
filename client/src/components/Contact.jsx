@@ -57,7 +57,7 @@ function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full  flex justify-center">
           <div className="w-full space-y-4">
             <Input
               type="text"
@@ -100,7 +100,7 @@ function Contact() {
 
             <div className="flex justify-end">
               <Button
-                className="w-full md:w-28"
+                className="w-full "
                 type="primary"
                 loading={loading}
                 onClick={handleSubmit}

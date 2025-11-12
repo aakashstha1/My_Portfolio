@@ -27,6 +27,10 @@ const introSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    imgURL: { type: String, trim: true },
+    cloudinaryId: {
+      type: String,
+    },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   },
   {

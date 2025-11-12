@@ -9,6 +9,7 @@ import Experiences from "../../components/Experiences";
 import { useEffect, useState } from "react";
 import ScreenLoader from "../../components/ScreenLoader";
 import VisitCounter from "../../components/VisitCounter.jsx";
+import Achievement from "../../components/Achivement.jsx";
 function Home() {
   const [loading, setLoading] = useState(false);
 
@@ -35,6 +36,7 @@ function Home() {
             <About />
             <Experiences />
             <Project />
+            <Achievement />
             <Contact />
             <Footer />
             <SocialMedia />

@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 import portfolioRoutes from "./routes/portfolio.routes.js";
 import projectRoutes from "./routes/project.routes.js";
 import expRoutes from "./routes/experience.routes.js";
+import achievementRoutes from "./routes/achievement.routes.js";
+
 // import path from "path";
 
 dotenv.config({});
@@ -28,6 +30,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/api", portfolioRoutes);
 app.use("/api/project", projectRoutes);
 app.use("/api/exp", expRoutes);
+app.use("/api/achievement", achievementRoutes);
 
 // app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 

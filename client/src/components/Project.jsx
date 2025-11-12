@@ -2,7 +2,7 @@ import axios from "axios";
 import SectionTitle from "./SectionTitle";
 import { useEffect, useState } from "react";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
-
+import { easeOut, motion } from "framer-motion";
 function Project() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [projectData, setProjectData] = useState([]);
@@ -31,8 +31,16 @@ function Project() {
           {projectData.length > 0 ? (
             <>
               <div className="grid grid-cols-4 sm:grid-cols-1 gap-8">
-                {visibleProjects.map((project) => (
-                  <div
+                {visibleProjects.map((project, index) => (
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: index * 0.2,
+                      ease: easeOut,
+                    }}
                     key={project._id}
                     className="relative group rounded-lg overflow-hidden"
                   >
@@ -79,7 +87,7 @@ function Project() {
                         )}
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 

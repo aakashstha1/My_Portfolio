@@ -12,7 +12,9 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="admin/login" element={<Login />} />
+
         <Route path="admin/forgot-password" element={<ForgotPassword />} />
         <Route path="admin/reset-password/:token" element={<ResetPassword />} />
         <Route

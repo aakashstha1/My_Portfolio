@@ -89,15 +89,17 @@ export const addProject = async (req, res) => {
     if (!imageURL || !publicId) {
       console.error("Cloudinary upload failed:", file);
       return res.status(500).json({
-        success: false, imgURL: imageURL,
-      cloudinaryId: publicId,
+        success: false,
+        imgURL: imageURL,
+        cloudinaryId: publicId,
         message: "Image upload failed.",
       });
     }
 
     const newProject = new Project({
       title,
-     
+      imageURL: imageURL,
+      cloudinaryId: publicId,
       githubURL,
       figmaURL,
       websiteURL,

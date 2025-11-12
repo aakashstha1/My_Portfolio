@@ -1,20 +1,15 @@
 import axios from "axios";
 import Button from "./Button";
 import { useEffect, useState } from "react";
-
+import { motion } from "framer-motion";
 function Intro() {
   const [introData, setIntroData] = useState({});
-  const [resumeURL, setResumeURL] = useState("");
   const API_URL = import.meta.env.VITE_API_URL;
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const introRes = await axios.get(`${API_URL}/get-intro`);
         setIntroData(introRes.data.data);
-
-        const aboutRes = await axios.get(`${API_URL}/get-about`);
-        setResumeURL(aboutRes.data.data?.resume || "");
       } catch (error) {
         console.error("Failed to fetch data:", error);
       }
@@ -23,47 +18,81 @@ function Intro() {
     fetchData();
   }, [API_URL]);
 
-  const handleDownload = async () => {
-    if (!resumeURL) return;
-
-    try {
-      const response = await fetch(resumeURL);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-      link.href = url;
-
-      link.download = "Aakash_Shrestha_CV.pdf";
-
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Failed to download resume:", error);
-    }
-  };
-
   return (
-    <div className="h-[90vh] bg-primary flex flex-col items-start justify-center gap-8 p-6 sm:h-full">
-      <h1 className="text-white text-xl font-bold">{introData.welcomeText}</h1>
-      <h1 className="text-secondary text-7xl sm:text-3xl font-semibold">
-        {introData.firstName} {introData.lastName}
-      </h1>
-      <h1 className="text-white text-5xl sm:text-3xl font-semibold">
-        {introData.caption}
-      </h1>
+    <div className="h-[90vh] bg-primary flex justify-center gap-6 sm:flex-col sm:items-center sm:h-full sm:pt-10">
+      <div className="w-2/3 flex flex-col items-start justify-center gap-4 sm:order-1 sm:w-full sm:items-center sm:text-center">
+        <motion.h1
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-white text-xl font-bold"
+        >
+          {introData.welcomeText}
+        </motion.h1>
+        <motion.h1
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          className="text-secondary text-7xl sm:text-3xl font-semibold"
+        >
+          {introData.firstName} {introData.lastName}
+        </motion.h1>
+        <motion.h1
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+          className="text-white text-5xl sm:text-3xl font-semibold"
+        >
+          {introData.caption}
+        </motion.h1>
 
-      <p className="text-white w-2/3 text-justify leading-6">
-        {introData.description}
-      </p>
+        <motion.p
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+          className="text-white w-2/3 text-justify leading-6"
+        >
+          {introData.description}
+        </motion.p>
 
-      {resumeURL && (
-        <div className="m-2">
-          <Button text="Download Resume" onClick={handleDownload} />
-        </div>
-      )}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="m-2"
+        >
+          <Button text="Explore" />
+        </motion.div>
+      </div>
+      <div className="w-1/3 flex items-center justify-center">
+        <motion.div
+          initial={{ scale: 0, opacity: 0, y: 100 }}
+          animate={{
+            scale: 1,
+            opacity: 1,
+            y: [0, -8, 0],
+          }}
+          transition={{
+            scale: {
+              type: "spring",
+              stiffness: 100,
+              damping: 12,
+              duration: 0.8,
+            },
+            opacity: { duration: 0.6 },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+          }}
+          whileHover={{ rotate: 2, scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          className="w-[500px] h-[400px] sm:w-[200px] sm:h-[110px] glowing-circle rounded-full bg-[#1A1A1A] overflow-hidden sm:items-center sm:justify-center"
+        >
+          <img
+            src={introData?.imgURL}
+            alt=""
+            className="w-full h-full object-cover rounded-full"
+          />
+        </motion.div>
+      </div>
     </div>
   );
 }

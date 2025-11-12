@@ -15,7 +15,7 @@ function AdminIntro() {
     lastName: "",
     caption: "",
     description: "",
-    // resume: "",
+    imgURL: null,
   });
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function AdminIntro() {
         const res = await axios.get(`${API_URL}/get-intro`, {
           withCredentials: true,
         });
-        setFormData(res.data.data);
+        setFormData(res?.data?.data);
       } catch (error) {
         console.log(error);
         message.error("Failed to load intro data");
@@ -44,8 +44,19 @@ function AdminIntro() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.put(`${API_URL}/update-intro`, formData, {
+      const payload = new FormData();
+      payload.append("welcomeText", formData.welcomeText);
+      payload.append("firstName", formData.firstName);
+      payload.append("lastName", formData.lastName);
+      payload.append("caption", formData.caption);
+      payload.append("description", formData.description);
+
+      if (formData.imgURL) payload.append("imgURL", formData.imgURL);
+      const res = await axios.put(`${API_URL}/update-intro`, payload, {
         withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       message.success(res.data.message);
     } catch (error) {
@@ -108,28 +119,16 @@ function AdminIntro() {
           rows={4}
         />
       </div>
-      {/* <div>
-        <label>Resume URL</label>
+      <div>
+        <label>Profile</label>
         <Input
-          name="resume"
-          placeholder="Resume URL"
-          value={formData.resume}
-          onChange={handleChange}
-          required
+          type="file"
+          accept="image/*"
+          onChange={(e) =>
+            setFormData({ ...formData, imgURL: e.target.files[0] })
+          }
         />
-        {formData.resume && (
-          <>
-            <a
-              href={formData.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline text-sm mt-2 block"
-            >
-              {decodeURIComponent(formData.resume.split("/").pop())}
-            </a>
-          </>
-        )}
-      </div> */}
+      </div>
 
       <div className="flex justify-end">
         <button

@@ -34,7 +34,9 @@ router.route("/admin/reset-password/:token").post(resetPassword);
 
 //Intro routes
 router.route("/get-intro").get(getIntro);
-router.route("/update-intro").put(authentication, updateIntro);
+router
+  .route("/update-intro")
+  .put(authentication, upload.single("imgURL"), updateIntro);
 
 //About routes
 router.route("/get-about").get(getAbout);

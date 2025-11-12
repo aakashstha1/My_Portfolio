@@ -10,6 +10,7 @@ import Links from "./Links";
 import { SettingOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import ChangePassword from "../Auth/ChangePassword";
+import AdminAchivement from "./AdminAchivement";
 
 function Dashboard() {
   const [activeTabKey, setActiveTabKey] = useState("1");
@@ -61,6 +62,11 @@ function Dashboard() {
     },
     {
       key: "5",
+      label: "Achievement",
+      children: <AdminAchivement />,
+    },
+    {
+      key: "6",
       label: "Links",
       children: <Links />,
     },

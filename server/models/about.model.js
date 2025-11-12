@@ -6,6 +6,10 @@ const aboutSchema = new mongoose.Schema(
     description2: { type: String, required: true, trim: true },
     skills: { type: [String], required: true },
     resume: { type: String, trim: true },
+    cloudinaryId: {
+      type: String,
+      required: true,
+    },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   },
   { timestamps: true }
