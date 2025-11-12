@@ -88,7 +88,7 @@ function Intro() {
         >
           <img
             src={introData?.imgURL}
-            alt=""
+            alt="profile.png"
             className="w-full h-full object-cover rounded-full"
           />
         </motion.div>
