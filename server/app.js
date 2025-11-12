@@ -19,7 +19,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://aakash-shrestha.onrender.com"],
+    origin: [
+      "http://localhost:5173",
+      "https://aakash-shrestha.onrender.com",
+      "https://www.aakashshrestha1.com.np",
+    ],
     credentials: true,
   })
 );
