@@ -1,7 +1,7 @@
 import { Carousel } from "antd";
 import SectionTitle from "./SectionTitle";
 import Lottie from "lottie-react";
-import certificateAnimation from "../assets/lottie/certificate.json";
+import certificateAnimation from "../assets/lottie/Certificate.json";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
