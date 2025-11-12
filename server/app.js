@@ -27,10 +27,10 @@ app.use("/uploads", express.static("uploads"));
 
 //Api's
 
-app.use("/api", portfolioRoutes);
-app.use("/api/project", projectRoutes);
-app.use("/api/exp", expRoutes);
-app.use("/api/achievement", achievementRoutes);
+app.use("/", portfolioRoutes);
+app.use("/project", projectRoutes);
+app.use("/exp", expRoutes);
+app.use("/achievement", achievementRoutes);
 
 // app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
