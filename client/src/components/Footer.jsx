@@ -3,7 +3,7 @@ function Footer() {
     <div className="py-10">
       <div className="h-[1px] w-full bg-slate-400"></div>
       <div className="flex flex-col items-center justify-center mt-10 opacity-70">
-        <p className="text-silver">
+        <p className="text-silver text-center">
           &copy; {new Date().getFullYear()} Aakash Shrestha. All rights
           reserved.
         </p>

@@ -13,4 +13,4 @@ export const transporter = nodemailer.createTransport({
   },
 });
 
-export const sender = `"ASN" <${process.env.USER}>`;
+export const sender = `"Skyborn" <${process.env.USER}>`;
