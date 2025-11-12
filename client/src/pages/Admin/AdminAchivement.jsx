@@ -69,7 +69,6 @@ function AdminAchievement() {
   };
 
   const resetForm = () => {
-    setShowAddModal(false);
     setFormData({
       title: "",
       imgURL: null,
@@ -78,6 +77,7 @@ function AdminAchievement() {
     if (fileInputRef.current) {
       fileInputRef.current.value = null;
     }
+    setShowAddModal(false);
   };
 
   const onDelete = (item) => {
@@ -122,7 +122,7 @@ function AdminAchievement() {
       </div>
 
       {/* Achievements Grid */}
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-4 gap-5 sm:grid-cols-1">
         {achievements.map((achievement) => (
           <div
             key={achievement._id}

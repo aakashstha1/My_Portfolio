@@ -25,7 +25,7 @@ function Achievement() {
   }, []);
 
   return (
-    <div id="achievement">
+    <div id="achievement" className="sm:hidden">
       <SectionTitle title="Achievements" />
       <div className="flex w-full items-center sm:flex-col">
         {/* Carousel */}
@@ -43,7 +43,7 @@ function Achievement() {
                   <img
                     src={achievement.imgURL || achievement.imageURL}
                     alt={achievement.title}
-                    className="px-10 w-full h-full rounded-lg mx-auto"
+                    className="px-10 w-full h-[450px] rounded-lg mx-auto object-contain"
                   />
                 </div>
               ))}
@@ -56,7 +56,7 @@ function Achievement() {
         </div>
 
         {/* Lottie animation */}
-        <div className="h-[50vh] w-1/3 flex sm:w-full sm:h-[30vh] justify-end sm:hidden">
+        <div className="h-[50vh] w-1/3 flex sm:w-full sm:h-[30vh] justify-end">
           <Lottie animationData={certificateAnimation} loop={true} />
         </div>
       </div>

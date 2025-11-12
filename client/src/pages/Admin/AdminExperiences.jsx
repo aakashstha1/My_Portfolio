@@ -168,7 +168,7 @@ function AdminExperiences() {
       </div>
 
       {/* Experience Cards */}
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-4 gap-5 sm:grid-cols-1">
         {experiences.map((experience, index) => (
           <div
             key={index}

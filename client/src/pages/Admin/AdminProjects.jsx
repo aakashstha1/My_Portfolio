@@ -119,7 +119,6 @@ function AdminProjects() {
   };
 
   const resetForm = () => {
-    setShowAddEditModal(false);
     setSelectedItemForEdit(null);
     setFormData({
       title: "",
@@ -132,6 +131,7 @@ function AdminProjects() {
     if (fileInputRef.current) {
       fileInputRef.current.value = null;
     }
+    setShowAddEditModal(false);
   };
 
   const onDelete = (item) => {
@@ -194,7 +194,7 @@ function AdminProjects() {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-4 gap-5 sm:grid-cols-1">
         {projects.map((project) => (
           <div
             key={project._id}
