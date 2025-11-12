@@ -132,7 +132,7 @@ function AdminAbout() {
           rows={2}
         />
       </div>
-      <div className="w-1/5">
+      <div className="w-1/5 sm:w-full">
         <label>Resume</label>
         <Input
           type="file"

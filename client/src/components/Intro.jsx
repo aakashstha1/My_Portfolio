@@ -85,13 +85,16 @@ function Intro() {
             }}
             whileHover={{ rotate: 2, scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="w-[500px] h-[400px] sm:w-[200px] sm:h-[110px] glowing-circle rounded-full bg-[#1A1A1A] overflow-hidden sm:items-center sm:justify-center"
+            className="relative w-[500px] h-[400px] sm:w-[200px] sm:h-[110px] glowing-circle rounded-full bg-[#1A1A1A] overflow-hidden sm:items-center sm:justify-center"
           >
             <img
               src={introData?.imgURL}
               alt="profile.png"
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover rounded-full transition-transform duration-500"
             />
+
+            {/* Overlay for hover dark effect */}
+            <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 transition duration-500 rounded-full pointer-events-none"></div>
           </motion.div>
         )}
       </div>

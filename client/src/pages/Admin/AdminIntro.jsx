@@ -119,7 +119,7 @@ function AdminIntro() {
           rows={4}
         />
       </div>
-      <div>
+      <div className="w-1/4 sm:w-full">
         <label>Profile</label>
         <Input
           type="file"

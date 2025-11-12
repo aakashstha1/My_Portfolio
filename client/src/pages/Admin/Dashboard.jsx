@@ -90,7 +90,7 @@ function Dashboard() {
   return (
     <>
       <div className="bg-primary p-1">
-        <h1 className="text-tubeLight-effect text-3xl mt-5 justify-center tracking-[8px] text-center relative">
+        <h1 className="text-tubeLight-effect text-3xl sm:text-xl mt-5 justify-center tracking-[8px] text-center relative">
           Admin Dashboard
         </h1>
       </div>
@@ -100,7 +100,7 @@ function Dashboard() {
         placement="bottomRight"
         trigger={["click"]}
       >
-        <div className="absolute top-8 right-10 cursor-pointer">
+        <div className="absolute top-8 right-10 cursor-pointer sm:right-5 sm:top-7">
           <SettingOutlined className="text-white" />
         </div>
       </Dropdown>
