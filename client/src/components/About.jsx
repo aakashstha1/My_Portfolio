@@ -103,7 +103,7 @@ function About() {
         <h1 className="text-silver text-xl mb-4">
           Here are the technologies I&apos;ve been working with:
         </h1>
-        <div className="flex flex-wrap gap-10 mt-10">
+        <div className="flex flex-wrap gap-10 mt-10 sm:hidden">
           {aboutData?.skills?.map((skill, index) => (
             <motion.div
               initial={{ x: -40, opacity: 0 }}
@@ -121,6 +121,27 @@ function About() {
               <div className="absolute inset-1 blur opacity-75 border "></div>
             </motion.div>
           ))}
+        </div>
+        <div className="overflow-hidden whitespace-nowrap w-full py-4 sm:block hidden">
+          <motion.div
+            className="flex gap-10"
+            animate={{ x: ["0%", "-100%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 10,
+            }}
+          >
+            {aboutData?.skills?.map((skill, index) => (
+              <div
+                key={index}
+                className="border border-secondary text-white py-3 px-10 group relative"
+              >
+                <h1>{skill}</h1>
+                <div className="absolute inset-1 blur opacity-75 border"></div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>

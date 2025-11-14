@@ -79,8 +79,8 @@ export const updateAbout = async (req, res) => {
     }
 
     if (req.file) {
-      about.resume = file.path || file.secure_url;
-      about.cloudinaryId = file.filename || file.public_id;
+      about.resume = req.file.path || req.file.secure_url;
+      about.cloudinaryId = req.file.filename || req.file.public_id;
     }
     const savedAbout = await about.save();
 
