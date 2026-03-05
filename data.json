@@ -1,0 +1,147 @@
+{
+  "introduction": {
+    "greeting": "Hello, I'm",
+    "name": "Aakash Shrestha",
+    "title": "Full Stack Developer",
+    "tagline": "I craft digital experiences that are fast, beautiful, and human.",
+    "avatar": "images/Profile.webp"
+  },
+
+  "about": {
+    "bio": "I am a BSc. CSIT student at Godawari College. I am passionate about coding and enjoy exploring new technologies in my free time. I am always eager to learn and grow, aiming to build a successful career while making a positive impact through my work. I actively look for opportunities to challenge myself and contribute meaningfully.",
+    "highlights": [
+      "Entry-level Backend Developer",
+      "Quick learner and team collaborator",
+      "Open to internship and junior roles",
+      "Actively seeking growth opportunities"
+    ],
+    "cv": "#"
+  },
+
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["HTML", "CSS", "React", "Next", "Javascript", "Framer Motion"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express", "Nest", "MongoDB", "MySQL"]
+    },
+    { "category": "Design", "items": ["Figma"] },
+    { "category": "DevOps", "items": ["Docker"] }
+  ],
+
+  "experiences": [
+    {
+      "role": "Backend Developer Intern",
+      "company": "Lunar IT Solution",
+      "period": "Nov 2025 — Feb 2026",
+      "description": "Worked as a Backend Developer Intern building RESTful APIs with Node.js and Express, managing data with MySQL. Assisted in authentication, debugging, and collaborating with frontend developers for seamless API integration.",
+      "tags": ["Reactjs", "Node.js", "Express", "MySQL"]
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "MERN Authentication System",
+      "description": "Built a secure authentication system using the MERN stack with user registration, login, and JWT-based authorization. Implemented protected routes and password hashing to ensure secure user access.",
+      "image": "images/p1.png",
+      "tags": ["React", "Node.js", "Express", "MongoDB"],
+      "github": "https://github.com/aakashstha1/MERN_Authentication.git",
+      "web": "https://mern-authentication-ppit.onrender.com/signup",
+      "figma": null
+    },
+    {
+      "title": "EduPal-FYP",
+      "description": "Developed a full-stack e-learning platform with user authentication, course management, and interactive learning features to enhance digital education experience.",
+      "image": "images/p2.png",
+      "tags": ["React", "Node.js", "Express", "MongoDB"],
+      "github": "https://github.com/aakashstha1/EduPal_FYP.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "Code Reviewer",
+      "description": "Built an AI-powered code review tool using Gemini API that analyzes code, provides feedback, and suggests improvements for better code quality.",
+      "image": "images/p3.png",
+      "tags": ["React", "Gemini"],
+      "github": "https://github.com/aakashstha1/Code_Reviewer.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "Aniwatch-Figma Prototype",
+      "description": "Designed a modern anime streaming app prototype in Figma, focusing on intuitive UI/UX, responsive layout, and smooth user flow.",
+      "image": "images/p4.png",
+      "tags": ["Figma"],
+      "github": null,
+      "web": null,
+      "figma": "https://www.figma.com/design/3l3jfvsCxqeRB41Q4sxBHn/AniWatch?node-id=2-2&t=Vei8un5Mt5HSghnM-1"
+    },
+    {
+      "title": "Blog-WriteWaves",
+      "description": "Created a full-stack blog platform using MySQL for database management, supporting post creation, editing, and user-based content management.",
+      "image": "images/p5.png",
+      "tags": ["Reactjs", "Node.js", "Express", "MySQL"],
+      "github": "https://github.com/aakashstha1/Blog_App.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "Movie Recommender",
+      "description": "Developed a movie recommendation system using Python that suggests movies based on user preferences and similarity algorithms.",
+      "image": "images/p6.png",
+      "tags": ["Python", "Streamlit", "Pandas", "Numpy"],
+      "github": "https://github.com/aakashstha1/movie_recommender.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "Time Capsule",
+      "description": "Built a digital time capsule application allowing users to securely store and seal text, images, audio, and video files for future access.",
+      "image": "images/p7.png",
+      "tags": ["Reactjs", "MongoDB", "Node.js", "Express"],
+      "github": "https://github.com/aakashstha1/Time-Capsule.git",
+      "web": "https://time-capsule-4fhl.onrender.com/",
+      "figma": null
+    },
+    {
+      "title": "Quizzy",
+      "description": "Developed an interactive quiz game using Next.js with dynamic questions, score tracking, and responsive UI for engaging user experience.",
+      "image": "images/p8.png",
+      "tags": ["Next.js", "Open Trivia Database API", "React"],
+      "github": "https://github.com/aakashstha1/quizzy.git",
+      "web": "https://quizzy-dpxq.onrender.com",
+      "figma": null
+    }
+  ],
+
+  "social": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/aakashstha1",
+      "icon": "github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/aakash-shrestha-3514b0268/",
+      "icon": "linkedin"
+    },
+    { "platform": "X", "url": "https://twitter.com", "icon": "x" },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/aakash_shrestha1/",
+      "icon": "instagram"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/aakash.stha.3",
+      "icon": "facebook"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:aakash.cerestha90@gmail.com",
+      "icon": "mail"
+    }
+  ]
+}
