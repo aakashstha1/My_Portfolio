@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>Aakash Shrestha</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -316,6 +317,15 @@
             Open to exciting opportunities, collaborations, and interesting
             conversations.
           </p>
+          <!-- ═══ LIKE BUTTON ═══ -->
+          <div class="flex flex-col items-center gap-3 mb-10">
+            <button id="like-btn" onclick="handleLike()">
+              <span id="like-icon">🤍</span>
+              <span id="like-label">Like this portfolio</span>
+            </button>
+            <p id="like-count" class="like-count">... people liked this</p>
+            <p id="like-msg" class="like-msg"></p>
+          </div>
           <div
             id="social-links"
             class="flex justify-center gap-4 flex-wrap mb-12"
@@ -610,6 +620,61 @@
           });
         });
       }
+
+      // ── Like Button ───────────────────────────────────────────────
+      const HIT_URL = "https://hits.sh/aakash-portfolio-2024.svg";
+
+      async function fetchLikeCount() {
+        const stored = localStorage.getItem("portfolio-like-count") || "0";
+        document.getElementById("like-count").textContent =
+          `${stored} ${stored === "1" ? "person" : "people"} liked this`;
+      }
+
+      async function handleLike() {
+        const btn = document.getElementById("like-btn");
+        const icon = document.getElementById("like-icon");
+        const msg = document.getElementById("like-msg");
+        const already = localStorage.getItem("portfolio-liked");
+
+        if (already) {
+          msg.textContent = "✨ You already liked this!";
+          setTimeout(() => (msg.textContent = ""), 2000);
+          return;
+        }
+
+        icon.classList.add("like-pop");
+        icon.addEventListener(
+          "animationend",
+          () => icon.classList.remove("like-pop"),
+          { once: true },
+        );
+
+        // Get current count and increment
+        const current = parseInt(
+          localStorage.getItem("portfolio-like-count") || "0",
+        );
+        const newCount = current + 1;
+
+        localStorage.setItem("portfolio-liked", "true");
+        localStorage.setItem("portfolio-like-count", newCount);
+
+        btn.classList.add("liked");
+        icon.textContent = "❤️";
+        document.getElementById("like-label").textContent = "Liked!";
+        document.getElementById("like-count").textContent =
+          `${newCount} ${newCount === 1 ? "person" : "people"} liked this`;
+        msg.textContent = "🎉 Thank you so much!";
+      }
+
+      (function checkLiked() {
+        if (localStorage.getItem("portfolio-liked")) {
+          const btn = document.getElementById("like-btn");
+          btn.classList.add("liked");
+          document.getElementById("like-icon").textContent = "❤️";
+          document.getElementById("like-label").textContent = "Liked!";
+        }
+        fetchLikeCount();
+      })();
 
       // ── Fallback data ─────────────────────────────────────────────
       function getFallbackData() {
