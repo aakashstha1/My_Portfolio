@@ -154,7 +154,11 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="#contact" class="cta-btn cta-btn-outline">Get in Touch</a>
+            <a
+              href="mailto:aakash.cerestha90@gmail.com"
+              class="cta-btn cta-btn-outline"
+              >Get in Touch</a
+            >
           </div>
         </div>
         <!-- Avatar -->
@@ -208,7 +212,7 @@
             <ul id="about-highlights" class="space-y-3 mb-10"></ul>
             <a
               id="cv-btn"
-              href="#"
+              href="about-cv"
               download
               class="cta-btn"
               style="width: fit-content"
@@ -316,7 +320,7 @@
             id="social-links"
             class="flex justify-center gap-4 flex-wrap mb-12"
           ></div>
-          <a id="email-btn" href="#" class="cta-btn text-base">
+          <a id="email-btn" class="cta-btn text-base">
             <svg
               width="18"
               height="18"
@@ -421,7 +425,8 @@
           hlList.appendChild(li);
         });
         const cvBtn = document.getElementById("cv-btn");
-        cvBtn.href = d.about.cv;
+        cvBtn.href = d.about.cv; // link from JSON
+        cvBtn.setAttribute("download", "Aakash-Shrestha.pdf"); // optional filename
 
         // Skills
         const sg = document.getElementById("skills-grid");
@@ -510,7 +515,8 @@
           a.innerHTML = ICONS[s.icon] || "";
           sl.appendChild(a);
         });
-        document.getElementById("email-btn").href = emailHref;
+        document.getElementById("email-btn").href =
+          "mailto:aakash.cerestha90@gmail.com";
       }
 
       // ── Theme ─────────────────────────────────────────────────────
@@ -624,7 +630,7 @@
               "Open to internship and junior roles",
               "Actively seeking growth opportunities",
             ],
-            cv: "#",
+            cv: "docs/Aakash-Shrestha-cv.pdf",
           },
           skills: [
             {
