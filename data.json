@@ -143,5 +143,65 @@
       "url": "mailto:aakash.cerestha90@gmail.com",
       "icon": "mail"
     }
+  ],
+
+  "quotes": [
+    {
+      "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "author": "Martin Fowler"
+    },
+    {
+      "text": "First, solve the problem. Then, write the code.",
+      "author": "John Johnson"
+    },
+    {
+      "text": "Experience is the name everyone gives to their mistakes.",
+      "author": "Oscar Wilde"
+    },
+    {
+      "text": "Java is to JavaScript what car is to Carpet.",
+      "author": "Chris Heilmann"
+    },
+    {
+      "text": "Sometimes it pays to stay in bed on Monday rather than spending the rest of the week debugging Monday's code.",
+      "author": "Dan Salomon"
+    },
+    {
+      "text": "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.",
+      "author": "Antoine de Saint-Exupery"
+    },
+    {
+      "text": "Code is like humor. When you have to explain it, it's bad.",
+      "author": "Cory House"
+    },
+    {
+      "text": "Simplicity is the soul of efficiency.",
+      "author": "Austin Freeman"
+    },
+    {
+      "text": "Make it work, make it right, make it fast.",
+      "author": "Kent Beck"
+    },
+    {
+      "text": "The best error message is the one that never shows up.",
+      "author": "Thomas Fuchs"
+    },
+    { "text": "Talk is cheap. Show me the code.", "author": "Linus Torvalds" },
+    {
+      "text": "Programming isn't about what you know; it's about what you can figure out.",
+      "author": "Chris Pine"
+    },
+    {
+      "text": "The best way to predict the future is to invent it.",
+      "author": "Alan Kay"
+    },
+    {
+      "text": "It's not a bug — it's an undocumented feature.",
+      "author": "Anonymous"
+    },
+    {
+      "text": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+      "author": "John Woods"
+    }
   ]
 }

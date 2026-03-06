@@ -17,7 +17,9 @@
     <!-- ═══════════════════ LOADER ═══════════════════ -->
     <div id="loader">
       <div class="loader-content">
-        <div class="loader-logo"><span class="accent">&lt;</span>SKY<span class="accent">/&gt;</span></div>
+        <div class="loader-logo">
+          <span class="accent">&lt;</span>SKY<span class="accent">/&gt;</span>
+        </div>
         <div class="loader-bar-wrap">
           <div class="loader-bar"></div>
         </div>
@@ -317,14 +319,74 @@
             Open to exciting opportunities, collaborations, and interesting
             conversations.
           </p>
-          <!-- ═══ LIKE BUTTON ═══ -->
-          <div class="flex flex-col items-center gap-3 mb-10">
-            <button id="like-btn" onclick="handleLike()">
-              <span id="like-icon">🤍</span>
-              <span id="like-label">Like this portfolio</span>
-            </button>
-            <p id="like-count" class="like-count">... people liked this</p>
-            <p id="like-msg" class="like-msg"></p>
+          <!-- ═══ DAILY DEV QUOTE ═══ -->
+          <div
+            class="card reveal rounded-2xl px-8 py-7 mb-10 max-w-2xl mx-auto text-center"
+            id="quote-card"
+          >
+            <div class="flex justify-center mb-4">
+              <span style="font-size: 2rem; line-height: 1">💬</span>
+            </div>
+            <p
+              id="quote-text"
+              class="font-['Syne'] text-lg font-semibold leading-relaxed mb-4"
+              style="color: var(--text)"
+            >
+              Loading quote...
+            </p>
+            <p id="quote-author" class="text-muted text-sm font-medium mb-5">
+              — ...
+            </p>
+            <div class="flex items-center justify-center gap-3">
+              <button
+                onclick="newQuote()"
+                class="proj-btn"
+                style="padding: 8px 18px; font-size: 0.82rem"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline points="23 4 23 10 17 10" />
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                </svg>
+                New Quote
+              </button>
+              <button
+                onclick="copyQuote()"
+                class="proj-btn"
+                style="padding: 8px 18px; font-size: 0.82rem"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path
+                    d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                  />
+                </svg>
+                Copy
+              </button>
+            </div>
+            <p
+              id="copy-msg"
+              style="
+                color: var(--accent);
+                font-size: 0.75rem;
+                margin-top: 10px;
+                min-height: 16px;
+                font-weight: 600;
+              "
+            ></p>
           </div>
           <div
             id="social-links"
@@ -527,6 +589,9 @@
         });
         document.getElementById("email-btn").href =
           "mailto:aakash.cerestha90@gmail.com";
+
+        QUOTES = d.quotes || [];
+        if (QUOTES.length) renderQuote(getDailyQuote());
       }
 
       // ── Theme ─────────────────────────────────────────────────────
@@ -598,6 +663,54 @@
         els.forEach((el) => obs.observe(el));
       }
 
+      // ── Daily Dev Quote ───────────────────────────────────────────
+      let QUOTES = [];
+
+      function getDailyQuote() {
+        const day = Math.floor(Date.now() / 86400000);
+        return QUOTES[day % QUOTES.length];
+      }
+
+      function renderQuote(quote) {
+        const textEl = document.getElementById("quote-text");
+        const authorEl = document.getElementById("quote-author");
+        if (!textEl || !authorEl) return;
+        textEl.classList.remove("quote-animate");
+        void textEl.offsetWidth;
+        textEl.classList.add("quote-animate");
+        authorEl.classList.remove("quote-animate");
+        void authorEl.offsetWidth;
+        authorEl.classList.add("quote-animate");
+        textEl.textContent = `"${quote.text}"`;
+        authorEl.textContent = `— ${quote.author}`;
+      }
+
+      function newQuote() {
+        if (!QUOTES.length) return;
+        const current = document.getElementById("quote-text").textContent;
+        let quote;
+        do {
+          quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+        } while (`"${quote.text}"` === current && QUOTES.length > 1);
+        renderQuote(quote);
+      }
+
+      function copyQuote() {
+        const text = document.getElementById("quote-text").textContent;
+        const author = document.getElementById("quote-author").textContent;
+        const msg = document.getElementById("copy-msg");
+        navigator.clipboard
+          .writeText(`${text} ${author}`)
+          .then(() => {
+            msg.textContent = "✅ Copied to clipboard!";
+            setTimeout(() => (msg.textContent = ""), 2000);
+          })
+          .catch(() => {
+            msg.textContent = "❌ Copy failed";
+            setTimeout(() => (msg.textContent = ""), 2000);
+          });
+      }
+
       // ── Cursor ────────────────────────────────────────────────────
       function setupCursor() {
         const cur = document.getElementById("cursor");
@@ -620,61 +733,6 @@
           });
         });
       }
-
-      // ── Like Button ───────────────────────────────────────────────
-      const HIT_URL = "https://hits.sh/aakash-portfolio-2024.svg";
-
-      async function fetchLikeCount() {
-        const stored = localStorage.getItem("portfolio-like-count") || "0";
-        document.getElementById("like-count").textContent =
-          `${stored} ${stored === "1" ? "person" : "people"} liked this`;
-      }
-
-      async function handleLike() {
-        const btn = document.getElementById("like-btn");
-        const icon = document.getElementById("like-icon");
-        const msg = document.getElementById("like-msg");
-        const already = localStorage.getItem("portfolio-liked");
-
-        if (already) {
-          msg.textContent = "✨ You already liked this!";
-          setTimeout(() => (msg.textContent = ""), 2000);
-          return;
-        }
-
-        icon.classList.add("like-pop");
-        icon.addEventListener(
-          "animationend",
-          () => icon.classList.remove("like-pop"),
-          { once: true },
-        );
-
-        // Get current count and increment
-        const current = parseInt(
-          localStorage.getItem("portfolio-like-count") || "0",
-        );
-        const newCount = current + 1;
-
-        localStorage.setItem("portfolio-liked", "true");
-        localStorage.setItem("portfolio-like-count", newCount);
-
-        btn.classList.add("liked");
-        icon.textContent = "❤️";
-        document.getElementById("like-label").textContent = "Liked!";
-        document.getElementById("like-count").textContent =
-          `${newCount} ${newCount === 1 ? "person" : "people"} liked this`;
-        msg.textContent = "🎉 Thank you so much!";
-      }
-
-      (function checkLiked() {
-        if (localStorage.getItem("portfolio-liked")) {
-          const btn = document.getElementById("like-btn");
-          btn.classList.add("liked");
-          document.getElementById("like-icon").textContent = "❤️";
-          document.getElementById("like-label").textContent = "Liked!";
-        }
-        fetchLikeCount();
-      })();
 
       // ── Fallback data ─────────────────────────────────────────────
       function getFallbackData() {
