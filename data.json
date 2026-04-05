@@ -44,7 +44,7 @@
   "projects": [
     {
       "title": "MERN Authentication System",
-      "description": "Built a secure authentication system using the MERN stack with user registration, login, and JWT-based authorization. Implemented protected routes and password hashing to ensure secure user access.",
+      "description": "A secure and scalable MERN authentication system with login, registration, email verification, password reset, and Google OAuth. Uses JWT, Zustand, and bcrypt for modern authentication and state management.",
       "image": "images/p1.png",
       "tags": ["React", "Node.js", "Express", "MongoDB"],
       "github": "https://github.com/aakashstha1/MERN_Authentication.git",
