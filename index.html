@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
       rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
   <body>
@@ -74,9 +83,15 @@
             class="hidden sm:flex items-center gap-1 p-1 rounded-full"
             style="background: var(--bg3); border: 1px solid var(--border)"
           >
-            <button class="theme-pill active" data-theme="dark">Dark</button>
-            <button class="theme-pill" data-theme="dim">Dim</button>
-            <button class="theme-pill" data-theme="light">Light</button>
+            <button class="theme-pill active" data-theme="dark">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="theme-pill" data-theme="dim">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+            <button class="theme-pill" data-theme="light">
+              <i class="fa-solid fa-sun"></i>
+            </button>
           </div>
           <!-- Hamburger -->
           <button
@@ -131,7 +146,7 @@
             id="hero-greeting"
           ></p>
           <h1
-            class="hero-line text-4xl md:text-7xl font-['Syne'] font-extrabold leading-none mb-4"
+            class="hero-line text-4xl md:text-7xl font-['helvetica'] font-extrabold leading-none mb-4"
             id="hero-name"
           ></h1>
           <p
@@ -147,6 +162,7 @@
             <a href="#projects" class="cta-btn"
               >View Work
               <svg
+                class="hidden sm:inline-block"
                 width="16"
                 height="16"
                 fill="none"
@@ -305,6 +321,9 @@
           id="projects-grid"
           class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         ></div>
+        <div class="flex justify-center mt-10">
+          <button id="toggle-projects" class="cta-btn">Show More</button>
+        </div>
       </div>
     </section>
 
@@ -329,7 +348,7 @@
             </div>
             <p
               id="quote-text"
-              class="font-['Syne'] text-lg font-semibold leading-relaxed mb-4"
+              class="font-['Inter'] text-lg font-semibold leading-relaxed mb-4"
               style="color: var(--text)"
             >
               Loading quote...
@@ -540,6 +559,8 @@
 
         // Projects
         const pg = document.getElementById("projects-grid");
+        const LIMIT = 6;
+
         d.projects.forEach((p) => {
           const links = [];
           if (p.github)
@@ -556,18 +577,45 @@
             );
           const div = document.createElement("div");
           div.className =
-            "card reveal rounded-2xl overflow-hidden flex flex-col";
+            "card reveal rounded-2xl overflow-hidden flex flex-col project-card";
           div.innerHTML = `
-            <div class="proj-img-wrap h-44">
-              <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover"/>
-            </div>
-            <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-['Syne'] font-bold text-lg mb-2">${p.title}</h3>
-              <p class="text-muted text-sm leading-relaxed mb-4 flex-1">${p.description}</p>
-              <div class="flex flex-wrap gap-2 mb-4">${p.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
-              <div class="flex flex-wrap gap-2">${links.join("")}</div>
-            </div>`;
+    <div class="proj-img-wrap h-44">
+      <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover"/>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+      <h3 class="font-['Syne'] font-bold text-lg mb-2">${p.title}</h3>
+      <p class="text-muted text-sm leading-relaxed mb-4 flex-1">${p.description}</p>
+      <div class="flex flex-wrap gap-2 mb-4">${p.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
+      <div class="flex flex-wrap gap-2">${links.join("")}</div>
+    </div>`;
           pg.appendChild(div);
+        });
+
+        // Hide cards beyond the limit initially
+        const allCards = pg.querySelectorAll(".project-card");
+        allCards.forEach((card, i) => {
+          if (i >= LIMIT) card.style.display = "none";
+        });
+
+        // Toggle button logic
+        const toggleBtn = document.getElementById("toggle-projects");
+        let expanded = false;
+
+        if (d.projects.length <= LIMIT) {
+          toggleBtn.style.display = "none";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+          expanded = !expanded;
+          allCards.forEach((card, i) => {
+            if (i >= LIMIT) card.style.display = expanded ? "" : "none";
+          });
+          toggleBtn.textContent = expanded ? "Show Less" : "Show More";
+          if (!expanded) {
+            document
+              .getElementById("projects")
+              .scrollIntoView({ behavior: "smooth" });
+          }
         });
 
         // Social
