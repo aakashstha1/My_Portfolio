@@ -46,7 +46,7 @@
       "title": "MERN Authentication System",
       "description": "A secure and scalable MERN authentication system with login, registration, email verification, password reset, and Google OAuth. Uses JWT, Zustand, and bcrypt for modern authentication and state management.",
       "image": "images/p1.png",
-      "tags": ["React", "Node.js", "Express", "MongoDB"],
+      "tags": ["React", "Node.js", "Express", "MongoDB", "Nodemailer"],
       "github": "https://github.com/aakashstha1/MERN_Authentication.git",
       "web": "https://mern-authentication-ppit.onrender.com/signup",
       "figma": null
