@@ -38,7 +38,8 @@
         "Express",
         "Nest",
         "MongoDB",
-        "MySQL"
+        "MySQL",
+        "FastAPI"
       ]
     },
     {
