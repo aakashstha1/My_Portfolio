@@ -6,7 +6,6 @@
     "tagline": "I craft digital experiences that are fast, beautiful, and human.",
     "avatar": "images/Profile.webp"
   },
-
   "about": {
     "bio": "I am a BSc. CSIT student at Godawari College. I am passionate about coding and enjoy exploring new technologies in my free time. I am always eager to learn and grow, aiming to build a successful career while making a positive impact through my work. I actively look for opportunities to challenge myself and contribute meaningfully.",
     "highlights": [
@@ -17,36 +16,70 @@
     ],
     "cv": "docs/Aakash-Shrestha-cv.pdf"
   },
-
   "skills": [
     {
       "category": "Frontend",
-      "items": ["HTML", "CSS", "React", "Next", "Javascript", "Framer Motion"]
+      "items": [
+        "HTML",
+        "CSS",
+        "React",
+        "Next",
+        "Javascript",
+        "TypeScript",
+        "TanStack Query",
+        "Zustand",
+        "Framer Motion"
+      ]
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "Express", "Nest", "MongoDB", "MySQL"]
+      "items": [
+        "Node.js",
+        "Express",
+        "Nest",
+        "MongoDB",
+        "MySQL"
+      ]
     },
-    { "category": "Design", "items": ["Figma"] },
-    { "category": "DevOps", "items": ["Docker"] }
+    {
+      "category": "Design",
+      "items": [
+        "Figma"
+      ]
+    },
+    {
+      "category": "DevOps",
+      "items": [
+        "Docker"
+      ]
+    }
   ],
-
   "experiences": [
     {
       "role": "Backend Developer Intern",
       "company": "Lunar IT Solution",
       "period": "Nov 2025 — Feb 2026",
       "description": "Worked as a Backend Developer Intern building RESTful APIs with Node.js and Express, managing data with MySQL. Assisted in authentication, debugging, and collaborating with frontend developers for seamless API integration.",
-      "tags": ["Reactjs", "Node.js", "Express", "MySQL"]
+      "tags": [
+        "Reactjs",
+        "Node.js",
+        "Express",
+        "MySQL"
+      ]
     }
   ],
-
   "projects": [
     {
       "title": "MERN Authentication System",
       "description": "A secure and scalable MERN authentication system with login, registration, email verification, password reset, and Google OAuth. Uses JWT, Zustand, and bcrypt for modern authentication and state management.",
       "image": "images/p1.png",
-      "tags": ["React", "Node.js", "Express", "MongoDB", "Nodemailer"],
+      "tags": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Nodemailer"
+      ],
       "github": "https://github.com/aakashstha1/MERN_Authentication.git",
       "web": "https://mern-authentication-ppit.onrender.com/signup",
       "figma": null
@@ -55,34 +88,59 @@
       "title": "EduPal-FYP",
       "description": "Developed a full-stack e-learning platform with user authentication, course management, and interactive learning features to enhance digital education experience.",
       "image": "images/p2.png",
-      "tags": ["React", "Node.js", "Express", "MongoDB"],
+      "tags": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "github": "https://github.com/aakashstha1/EduPal_FYP.git",
       "web": null,
       "figma": null
     },
     {
-      "title": "Code Reviewer",
-      "description": "Built an AI-powered code review tool using Gemini API that analyzes code, provides feedback, and suggests improvements for better code quality.",
-      "image": "images/p3.png",
-      "tags": ["React", "Gemini"],
-      "github": "https://github.com/aakashstha1/Code_Reviewer.git",
+      "title": "Real-estate buyer portal",
+      "description": "A full-stack real-estate buyer portal built with the MERN stack and Redis, featuring secure authentication, property browsing, favourites management, and fast session/data caching for improved performance and user experience.",
+      "image": "images/p9.png",
+      "tags": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Redis"
+      ],
+      "github": "https://github.com/aakashstha1/Buyer-Portal.git",
       "web": null,
       "figma": null
     },
     {
-      "title": "Aniwatch-Figma Prototype",
-      "description": "Designed a modern anime streaming app prototype in Figma, focusing on intuitive UI/UX, responsive layout, and smooth user flow.",
-      "image": "images/p4.png",
-      "tags": ["Figma"],
-      "github": null,
+      "title": "Tenant Bill Management System",
+      "description": "A full-stack tenant bill management system built with the MERN stack, featuring tenant management, rent and electricity bill tracking, and analytics dashboards. The frontend is developed using TypeScript with React Query for efficient server-state handling and Zustand for lightweight state management, while the backend is powered by JavaScript and Node.js.",
+      "image": "images/p10.png",
+      "tags": [
+        "React",
+        "TypeScript",
+        "TanStack Query",
+        "Zustand",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Recharts"
+      ],
+      "github": "https://github.com/aakashstha1/Bill-Management.git",
       "web": null,
-      "figma": "https://www.figma.com/design/3l3jfvsCxqeRB41Q4sxBHn/AniWatch?node-id=2-2&t=Vei8un5Mt5HSghnM-1"
+      "figma": null
     },
     {
       "title": "Blog-WriteWaves",
       "description": "Created a full-stack blog platform using MySQL for database management, supporting post creation, editing, and user-based content management.",
       "image": "images/p5.png",
-      "tags": ["Reactjs", "Node.js", "Express", "MySQL"],
+      "tags": [
+        "Reactjs",
+        "Node.js",
+        "Express",
+        "MySQL"
+      ],
       "github": "https://github.com/aakashstha1/Blog_App.git",
       "web": null,
       "figma": null
@@ -91,7 +149,12 @@
       "title": "Movie Recommender",
       "description": "Developed a movie recommendation system using Python that suggests movies based on user preferences and similarity algorithms.",
       "image": "images/p6.png",
-      "tags": ["Python", "Streamlit", "Pandas", "Numpy"],
+      "tags": [
+        "Python",
+        "Streamlit",
+        "Pandas",
+        "Numpy"
+      ],
       "github": "https://github.com/aakashstha1/movie_recommender.git",
       "web": null,
       "figma": null
@@ -100,22 +163,53 @@
       "title": "Time Capsule",
       "description": "Built a digital time capsule application allowing users to securely store and seal text, images, audio, and video files for future access.",
       "image": "images/p7.png",
-      "tags": ["Reactjs", "MongoDB", "Node.js", "Express"],
+      "tags": [
+        "Reactjs",
+        "MongoDB",
+        "Node.js",
+        "Express"
+      ],
       "github": "https://github.com/aakashstha1/Time-Capsule.git",
       "web": "https://time-capsule-4fhl.onrender.com/",
       "figma": null
     },
     {
+      "title": "Code Reviewer",
+      "description": "Built an AI-powered code review tool using Gemini API that analyzes code, provides feedback, and suggests improvements for better code quality.",
+      "image": "images/p3.png",
+      "tags": [
+        "React",
+        "Gemini"
+      ],
+      "github": "https://github.com/aakashstha1/Code_Reviewer.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "Aniwatch-Figma Prototype",
+      "description": "Designed a modern anime streaming app prototype in Figma, focusing on intuitive UI/UX, responsive layout, and smooth user flow.",
+      "image": "images/p4.png",
+      "tags": [
+        "Figma"
+      ],
+      "github": null,
+      "web": null,
+      "figma": "https://www.figma.com/design/3l3jfvsCxqeRB41Q4sxBHn/AniWatch?node-id=2-2&t=Vei8un5Mt5HSghnM-1"
+    },
+    {
       "title": "Quizzy",
       "description": "Developed an interactive quiz game using Next.js with dynamic questions, score tracking, and responsive UI for engaging user experience.",
       "image": "images/p8.png",
-      "tags": ["Next.js", "Open Trivia Database API", "React"],
+      "tags": [
+        "Next.js",
+        "Open Trivia Database API",
+        "React"
+      ],
       "github": "https://github.com/aakashstha1/quizzy.git",
       "web": "https://quizzy-dpxq.onrender.com",
       "figma": null
     }
   ],
-
   "social": [
     {
       "platform": "GitHub",
@@ -127,7 +221,11 @@
       "url": "https://www.linkedin.com/in/aakash-shrestha-3514b0268/",
       "icon": "linkedin"
     },
-    { "platform": "X", "url": "https://twitter.com", "icon": "x" },
+    {
+      "platform": "X",
+      "url": "https://twitter.com",
+      "icon": "x"
+    },
     {
       "platform": "Instagram",
       "url": "https://www.instagram.com/aakash_shrestha1/",
@@ -144,7 +242,6 @@
       "icon": "mail"
     }
   ],
-
   "quotes": [
     {
       "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
@@ -186,7 +283,10 @@
       "text": "The best error message is the one that never shows up.",
       "author": "Thomas Fuchs"
     },
-    { "text": "Talk is cheap. Show me the code.", "author": "Linus Torvalds" },
+    {
+      "text": "Talk is cheap. Show me the code.",
+      "author": "Linus Torvalds"
+    },
     {
       "text": "Programming isn't about what you know; it's about what you can figure out.",
       "author": "Chris Pine"
