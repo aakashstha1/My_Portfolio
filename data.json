@@ -116,7 +116,7 @@
     },
     {
       "title": "Tenant Bill Management System",
-      "description": "A full-stack tenant bill management system built with the MERN stack, featuring tenant management, rent and electricity bill tracking, and analytics dashboards. The frontend is developed using TypeScript with React Query for efficient server-state handling and Zustand for lightweight state management, while the backend is powered by JavaScript and Node.js.",
+      "description": "A full-stack tenant bill management system built with the MERN stack, featuring tenant management, rent and electricity bill tracking, and analytics dashboards.",
       "image": "images/p10.png",
       "tags": [
         "React",
