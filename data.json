@@ -116,7 +116,7 @@
     },
     {
       "title": "Tenant Bill Management System",
-      "description": "",
+      "description": "A full-stack tenant bill management system built with the MERN stack, featuring tenant management, rent and electricity bill tracking, and analytics dashboards.",
       "image": "images/p10.png",
       "tags": [
         "React",
