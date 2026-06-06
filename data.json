@@ -14,7 +14,7 @@
       "Open to internship and junior roles",
       "Actively seeking growth opportunities"
     ],
-    "cv": "docs/Aakash-Shrestha-cv.pdf"
+    "cv": "docs/Aakash-CV.pdf"
   },
   "skills": [
     {
@@ -79,39 +79,10 @@
         "Node.js",
         "Express",
         "MongoDB",
-        "Nodemailer"
+        "Resend"
       ],
-      "github": "https://github.com/aakashstha1/MERN_Authentication.git",
-      "web": "https://mern-authentication-ppit.onrender.com/signup",
-      "figma": null
-    },
-    {
-      "title": "EduPal-FYP",
-      "description": "Developed a full-stack e-learning platform with user authentication, course management, and interactive learning features to enhance digital education experience.",
-      "image": "images/p2.png",
-      "tags": [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB"
-      ],
-      "github": "https://github.com/aakashstha1/EduPal_FYP.git",
-      "web": null,
-      "figma": null
-    },
-    {
-      "title": "Real-estate buyer portal",
-      "description": "A full-stack real-estate buyer portal built with the MERN stack and Redis, featuring secure authentication, property browsing, favourites management, and fast session/data caching for improved performance and user experience.",
-      "image": "images/p9.png",
-      "tags": [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Redis"
-      ],
-      "github": "https://github.com/aakashstha1/Buyer-Portal.git",
-      "web": null,
+      "github": "https://github.com/aakashstha1/MERN-Authentication",
+      "web": "https://aakash-mern-auth.netlify.app/",
       "figma": null
     },
     {
@@ -129,6 +100,50 @@
         "Recharts"
       ],
       "github": "https://github.com/aakashstha1/Bill-Management.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "EduPal-FYP",
+      "description": "Developed a full-stack e-learning platform with user authentication, course management, and interactive learning features to enhance digital education experience.",
+      "image": "images/p2.png",
+      "tags": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "github": "https://github.com/aakashstha1/EduPal_FYP.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "shortNpay",
+      "description": "Developed a MERN stack URL shortener application with secure authentication and payment integration, enabling users to generate short, shareable links after successful payment verification.",
+      "tags": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "TypeScript",
+        "TanStack Query"
+      ],
+      "github": "https://github.com/aakashstha1/shortNpay.git",
+      "web": null,
+      "figma": null
+    },
+    {
+      "title": "Real-estate buyer portal",
+      "description": "A full-stack real-estate buyer portal built with the MERN stack and Redis, featuring secure authentication, property browsing, favourites management, and fast session/data caching for improved performance and user experience.",
+      "image": "images/p9.png",
+      "tags": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Redis"
+      ],
+      "github": "https://github.com/aakashstha1/Buyer-Portal.git",
       "web": null,
       "figma": null
     },
