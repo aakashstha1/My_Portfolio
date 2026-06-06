@@ -120,6 +120,7 @@
     {
       "title": "shortNpay",
       "description": "Developed a MERN stack URL shortener application with secure authentication and payment integration, enabling users to generate short, shareable links after successful payment verification.",
+      "image": "images/11.png",
       "tags": [
         "React",
         "Node.js",
