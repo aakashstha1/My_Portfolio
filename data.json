@@ -71,18 +71,34 @@
   ],
   "projects": [
     {
-      "title": "MERN Authentication System",
-      "description": "A secure and scalable MERN authentication system with login, registration, email verification, password reset, and Google OAuth. Uses JWT, Zustand, and bcrypt for modern authentication and state management.",
-      "image": "images/p1.png",
+      "title": "shortCopy",
+      "description": "Developed a full-stack URL shortener application that allows users to generate and share shortened URLs without requiring authentication.",
+      "image": "images/shortNcopy.png",
       "tags": [
-        "React",
+        "Next.js",
         "Node.js",
         "Express",
         "MongoDB",
-        "Resend"
+        "TypeScript",
+        "TanStack Query"
       ],
-      "github": "https://github.com/aakashstha1/MERN-Authentication",
-      "web": "https://aakash-mern-auth.netlify.app/",
+      "github": "https://github.com/aakashstha1/shortNcopy.git",
+      "web": "https://shortncopy.netlify.app/",
+      "figma": null
+    },
+    {
+      "title": "FIFA Prediction",
+      "description": "Developed a full-stack FIFA World Cup prediction platform where users can predict match winners, track scores, and compete on a live leaderboard throughout the tournament.",
+      "image": "images/fifa.png",
+      "tags": [
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "TanStack Query"
+      ],
+      "github": "https://github.com/aakashstha1/Fifa_Prediction.git",
+      "web": "https://fifa-predictions.netlify.app/",
       "figma": null
     },
     {
@@ -95,7 +111,7 @@
         "TanStack Query",
         "Zustand",
         "Node.js",
-        "Express",
+        "Express.js",
         "MongoDB",
         "Recharts"
       ],
@@ -110,26 +126,10 @@
       "tags": [
         "React",
         "Node.js",
-        "Express",
+        "Express.js",
         "MongoDB"
       ],
       "github": "https://github.com/aakashstha1/EduPal_FYP.git",
-      "web": null,
-      "figma": null
-    },
-    {
-      "title": "shortNpay",
-      "description": "Developed a MERN stack URL shortener application with secure authentication and payment integration, enabling users to generate short, shareable links after successful payment verification.",
-      "image": "images/p11.png",
-      "tags": [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "TypeScript",
-        "TanStack Query"
-      ],
-      "github": "https://github.com/aakashstha1/shortNpay.git",
       "web": null,
       "figma": null
     },
@@ -140,7 +140,7 @@
       "tags": [
         "React",
         "Node.js",
-        "Express",
+        "Express.js",
         "MongoDB",
         "Redis"
       ],
@@ -155,7 +155,7 @@
       "tags": [
         "Reactjs",
         "Node.js",
-        "Express",
+        "Express.js",
         "MySQL"
       ],
       "github": "https://github.com/aakashstha1/Blog_App.git",
@@ -184,7 +184,7 @@
         "Reactjs",
         "MongoDB",
         "Node.js",
-        "Express"
+        "Express.js"
       ],
       "github": "https://github.com/aakashstha1/Time-Capsule.git",
       "web": "https://time-capsule-4fhl.onrender.com/",
@@ -224,6 +224,21 @@
       ],
       "github": "https://github.com/aakashstha1/quizzy.git",
       "web": "https://quizzy-dpxq.onrender.com",
+      "figma": null
+    },
+    {
+      "title": "MERN Authentication System",
+      "description": "A secure and scalable MERN authentication system with login, registration, email verification, password reset, and Google OAuth. Uses JWT, Zustand, and bcrypt for modern authentication and state management.",
+      "image": "images/p1.png",
+      "tags": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Resend"
+      ],
+      "github": "https://github.com/aakashstha1/MERN-Authentication",
+      "web": "https://aakash-mern-auth.netlify.app/",
       "figma": null
     }
   ],
