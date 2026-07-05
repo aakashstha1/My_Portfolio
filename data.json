@@ -7,12 +7,12 @@
     "avatar": "images/profile.jpeg"
   },
   "about": {
-    "bio": "I am a BSc. CSIT student at Godawari College. I am passionate about coding and enjoy exploring new technologies in my free time. I am always eager to learn and grow, aiming to build a successful career while making a positive impact through my work. I actively look for opportunities to challenge myself and contribute meaningfully.",
+    "bio": "Passionate about coding and exploring emerging technologies, with a strong focus on continuous learning and growth. I aim to build a career centered on meaningful, impactful work, and welcome opportunities to challenge myself while contributing real value to a team.",
     "highlights": [
-      "Entry-level Backend Developer",
-      "Quick learner and team collaborator",
-      "Open to internship and junior roles",
-      "Actively seeking growth opportunities"
+      "Quick learner and effective team collaborator",
+      "Open to internship and junior developer roles",
+      "Actively seeking opportunities for professional growth",
+      "Focused on writing clean, efficient code"
     ],
     "cv": "docs/resume.pdf"
   },
