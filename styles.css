@@ -462,6 +462,13 @@ section {
   pointer-events: none;
 }
 .loader-content {
+  opacity: 0;
+}
+
+.fonts-loaded .loader-content {
+  opacity: 1;
+}
+.loader-content {
   display: flex;
   flex-direction: column;
   align-items: center;

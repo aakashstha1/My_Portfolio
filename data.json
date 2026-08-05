@@ -2,7 +2,7 @@
   "introduction": {
     "greeting": "Hello, I'm",
     "name": "Aakash Shrestha",
-    "title": "Full Stack Developer",
+    "title": "Full Stack Developer | MERN Stack",
     "tagline": "I craft digital experiences that are fast, beautiful, and human.",
     "avatar": "images/profile.jpeg"
   },
@@ -18,17 +18,21 @@
   },
   "skills": [
     {
+      "category": "Languages",
+      "items": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ]
+    },
+    {
       "category": "Frontend",
       "items": [
         "HTML",
         "CSS",
         "React",
-        "Next",
-        "Javascript",
-        "TypeScript",
+        "Next.js",
         "TanStack Query",
-        "Zustand",
-        "Framer Motion"
       ]
     },
     {
@@ -36,21 +40,19 @@
       "items": [
         "Node.js",
         "Express",
-        "Nest",
+        "NestJS",
+        "FastAPI",
         "MongoDB",
-        "MySQL",
-        "FastAPI"
+        "MySQL"
       ]
     },
     {
-      "category": "Design",
+      "category": "Concepts",
       "items": [
-        "Figma"
-      ]
-    },
-    {
-      "category": "DevOps",
-      "items": [
+        "REST API",
+        "Redis",
+        "DSA",
+        "OOP",
         "Docker"
       ]
     }
@@ -72,7 +74,7 @@
   "projects": [
     {
       "title": "shortCopy",
-      "description": "Developed a full-stack URL shortener application that allows users to generate and share shortened URLs without requiring authentication.",
+      "description": "A full-stack URL shortener built for speed and zero friction - no sign-up required. Users generate and share shortened links instantly, with a Next.js frontend, Express/MongoDB backend, and TanStack Query handling data fetching, all written in TypeScript for type safety end to end.",
       "image": "images/shortNcopy.png",
       "tags": [
         "Next.js",
@@ -88,7 +90,7 @@
     },
     {
       "title": "FIFA Prediction",
-      "description": "Developed a full-stack FIFA World Cup prediction platform where users can predict match winners, track scores, and compete on a live leaderboard throughout the tournament.",
+      "description": "A real-time World Cup prediction platform where fans compete by picking match winners. Built on the MERN stack with TanStack Query, it tracks scores automatically as results come in and surfaces a live leaderboard, turning tournament-watching into a running competition among users.",
       "image": "images/fifa.png",
       "tags": [
         "MongoDB",
@@ -103,7 +105,7 @@
     },
     {
       "title": "Tenant Bill Management System",
-      "description": "A full-stack tenant bill management system built with the MERN stack, featuring tenant management, rent and electricity bill tracking, and analytics dashboards.",
+      "description": "A full-stack property management tool for landlords juggling multiple tenants - tracking rent, electricity usage, and payment history in one place. Built with React, TypeScript, and Zustand on the frontend and Node/Express/MongoDB on the backend, with Recharts powering visual analytics dashboards for at-a-glance financial insight.",
       "image": "images/p10.png",
       "tags": [
         "React",
@@ -121,7 +123,7 @@
     },
     {
       "title": "EduPal-FYP",
-      "description": "Developed a full-stack e-learning platform with user authentication, course management, and interactive learning features to enhance digital education experience.",
+      "description": "A full-stack e-learning platform designed to bring structure to digital education - covering user authentication, course creation, and interactive lesson delivery. Built end-to-end on the MERN stack as a final-year capstone, focused on making online learning feel guided rather than self-serve.",
       "image": "images/p2.png",
       "tags": [
         "React",
@@ -135,7 +137,7 @@
     },
     {
       "title": "Real-estate buyer portal",
-      "description": "A full-stack real-estate buyer portal built with the MERN stack and Redis, featuring secure authentication, property browsing, favourites management, and fast session/data caching for improved performance and user experience.",
+      "description": "A MERN-based property browsing platform where buyers can register, log in, explore listings, and save favorites for later. Redis is layered in for fast session handling and caching, keeping the browsing experience responsive even as the listing catalog grows.",
       "image": "images/p9.png",
       "tags": [
         "React",
@@ -150,7 +152,7 @@
     },
     {
       "title": "Blog-WriteWaves",
-      "description": "Created a full-stack blog platform using MySQL for database management, supporting post creation, editing, and user-based content management.",
+      "description": "A full-stack blogging platform giving writers complete control over their content - creating, editing, and managing posts under their own accounts. Built with React, Node, and Express, with MySQL handling relational data storage instead of the typical NoSQL approach - a deliberate choice to work with structured, relational content models.",
       "image": "images/p5.png",
       "tags": [
         "Reactjs",
@@ -163,22 +165,8 @@
       "figma": null
     },
     {
-      "title": "Movie Recommender",
-      "description": "Developed a movie recommendation system using Python that suggests movies based on user preferences and similarity algorithms.",
-      "image": "images/p6.png",
-      "tags": [
-        "Python",
-        "Streamlit",
-        "Pandas",
-        "Numpy"
-      ],
-      "github": "https://github.com/aakashstha1/movie_recommender.git",
-      "web": null,
-      "figma": null
-    },
-    {
       "title": "Time Capsule",
-      "description": "Built a digital time capsule application allowing users to securely store and seal text, images, audio, and video files for future access.",
+      "description": "A digital time capsule app that lets users seal away text, images, audio, and video - sealed and locked until a future date they choose. Built on the MERN stack, it turns a simple idea (write now, read later) into a genuinely useful tool for preserving memories or messages meant to wait.",
       "image": "images/p7.png",
       "tags": [
         "Reactjs",
@@ -188,57 +176,6 @@
       ],
       "github": "https://github.com/aakashstha1/Time-Capsule.git",
       "web": "https://time-capsule-4fhl.onrender.com/",
-      "figma": null
-    },
-    {
-      "title": "Code Reviewer",
-      "description": "Built an AI-powered code review tool using Gemini API that analyzes code, provides feedback, and suggests improvements for better code quality.",
-      "image": "images/p3.png",
-      "tags": [
-        "React",
-        "Gemini"
-      ],
-      "github": "https://github.com/aakashstha1/Code_Reviewer.git",
-      "web": null,
-      "figma": null
-    },
-    {
-      "title": "Aniwatch-Figma Prototype",
-      "description": "Designed a modern anime streaming app prototype in Figma, focusing on intuitive UI/UX, responsive layout, and smooth user flow.",
-      "image": "images/p4.png",
-      "tags": [
-        "Figma"
-      ],
-      "github": null,
-      "web": null,
-      "figma": "https://www.figma.com/design/3l3jfvsCxqeRB41Q4sxBHn/AniWatch?node-id=2-2&t=Vei8un5Mt5HSghnM-1"
-    },
-    {
-      "title": "Quizzy",
-      "description": "Developed an interactive quiz game using Next.js with dynamic questions, score tracking, and responsive UI for engaging user experience.",
-      "image": "images/p8.png",
-      "tags": [
-        "Next.js",
-        "Open Trivia Database API",
-        "React"
-      ],
-      "github": "https://github.com/aakashstha1/quizzy.git",
-      "web": "https://quizzy-dpxq.onrender.com",
-      "figma": null
-    },
-    {
-      "title": "MERN Authentication System",
-      "description": "A secure and scalable MERN authentication system with login, registration, email verification, password reset, and Google OAuth. Uses JWT, Zustand, and bcrypt for modern authentication and state management.",
-      "image": "images/p1.png",
-      "tags": [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Resend"
-      ],
-      "github": "https://github.com/aakashstha1/MERN-Authentication",
-      "web": "https://aakash-mern-auth.netlify.app/",
       "figma": null
     }
   ],

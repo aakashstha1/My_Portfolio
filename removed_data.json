@@ -1,0 +1,67 @@
+[
+    {
+        "title": "Movie Recommender",
+        "description": "Developed a movie recommendation system using Python that suggests movies based on user preferences and similarity algorithms.",
+        "image": "images/p6.png",
+        "tags": [
+            "Python",
+            "Streamlit",
+            "Pandas",
+            "Numpy"
+        ],
+        "github": "https://github.com/aakashstha1/movie_recommender.git",
+        "web": null,
+        "figma": null
+    },
+    {
+        "title": "Code Reviewer",
+        "description": "Built an AI-powered code review tool using Gemini API that analyzes code, provides feedback, and suggests improvements for better code quality.",
+        "image": "images/p3.png",
+        "tags": [
+            "React",
+            "Gemini"
+        ],
+        "github": "https://github.com/aakashstha1/Code_Reviewer.git",
+        "web": null,
+        "figma": null
+    },
+    {
+        "title": "Aniwatch-Figma Prototype",
+        "description": "Designed a modern anime streaming app prototype in Figma, focusing on intuitive UI/UX, responsive layout, and smooth user flow.",
+        "image": "images/p4.png",
+        "tags": [
+            "Figma"
+        ],
+        "github": null,
+        "web": null,
+        "figma": "https://www.figma.com/design/3l3jfvsCxqeRB41Q4sxBHn/AniWatch?node-id=2-2&t=Vei8un5Mt5HSghnM-1"
+    },
+    {
+        "title": "Quizzy",
+        "description": "Developed an interactive quiz game using Next.js with dynamic questions, score tracking, and responsive UI for engaging user experience.",
+        "image": "images/p8.png",
+        "tags": [
+            "Next.js",
+            "Open Trivia Database API",
+            "React"
+        ],
+        "github": "https://github.com/aakashstha1/quizzy.git",
+        "web": "https://quizzy-dpxq.onrender.com",
+        "figma": null
+    },
+    {
+        "title": "MERN Authentication System",
+        "description": "A secure and scalable MERN authentication system with login, registration, email verification, password reset, and Google OAuth. Uses JWT, Zustand, and bcrypt for modern authentication and state management.",
+        "image": "images/p1.png",
+        "tags": [
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Resend"
+        ],
+        "github": "https://github.com/aakashstha1/MERN-Authentication",
+        "web": "https://aakash-mern-auth.netlify.app/",
+        "figma": null
+    }
+]
