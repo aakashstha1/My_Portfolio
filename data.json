@@ -73,6 +73,22 @@
   ],
   "projects": [
     {
+      "title": "Quill - Blogging Platform",
+      "description": "A full-stack MERN blogging platform with TanStack Query, a TF-IDF recommendation engine, and an admin dashboard for managing posts, categories, tags, and users. Built to streamline content publishing, moderation, and discovery.",
+      "image": "images/blog.png",
+      "tags": [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "TF-IDF",
+        "TanStack Query"
+      ],
+      "github": "https://github.com/aakashstha1/blogging-platform.git",
+      "web": null,
+      "figma": null
+    },
+    {
       "title": "ShortNCopy",
       "description": "A full-stack URL shortener built for speed and zero friction - no sign-up required. Users generate and share shortened links instantly, with a Next.js frontend, Express/MongoDB backend, and TanStack Query handling data fetching, all written in TypeScript for type safety end to end.",
       "image": "images/shortNcopy.png",
@@ -147,20 +163,6 @@
         "Redis"
       ],
       "github": "https://github.com/aakashstha1/Buyer-Portal.git",
-      "web": null,
-      "figma": null
-    },
-    {
-      "title": "Blog-WriteWaves",
-      "description": "A full-stack blogging platform giving writers complete control over their content - creating, editing, and managing posts under their own accounts. Built with React, Node, and Express, with MySQL handling relational data storage instead of the typical NoSQL approach - a deliberate choice to work with structured, relational content models.",
-      "image": "images/p5.png",
-      "tags": [
-        "Reactjs",
-        "Node.js",
-        "Express.js",
-        "MySQL"
-      ],
-      "github": "https://github.com/aakashstha1/Blog_App.git",
       "web": null,
       "figma": null
     },
