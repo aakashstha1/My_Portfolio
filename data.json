@@ -121,7 +121,7 @@
     },
     {
       "title": "Tenant Bill Management System",
-      "description": "A full-stack property management tool for landlords juggling multiple tenants - tracking rent, electricity usage, and payment history in one place. Built with React, TypeScript, and Zustand on the frontend and Node/Express/MongoDB on the backend, with Recharts powering visual analytics dashboards for at-a-glance financial insight.",
+      "description": "A full-stack property management platform for landlords to track tenants, rent payments, electricity usage, and billing history, featuring Recharts-powered analytics dashboards for financial insights.",
       "image": "images/p10.png",
       "tags": [
         "React",
