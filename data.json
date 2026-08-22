@@ -105,6 +105,21 @@
       "figma": null
     },
     {
+      "title": "RAG",
+      "description": "Built a RAG-based document Q&A system using FastAPI, ChromaDB, Sentence Transformers, and Groq LLM, enabling users to upload PDFs, extract and chunk content, generate embeddings, and semantically retrieve relevant information. Implemented context-aware question answering with source citations and support for multiple documents.",
+      "image": "images/rag.png",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "ChromaDB",
+        "Sentence Transformers",
+        "Groq"
+      ],
+      "github": "https://github.com/aakashstha1/rag-system.git",
+      "web": null,
+      "figma": null
+    },
+    {
       "title": "FIFA Prediction",
       "description": "A real-time World Cup prediction platform where fans compete by picking match winners. Built on the MERN stack with TanStack Query, it tracks scores automatically as results come in and surfaces a live leaderboard, turning tournament-watching into a running competition among users.",
       "image": "images/fifa.png",
@@ -117,6 +132,21 @@
       ],
       "github": "https://github.com/aakashstha1/Fifa_Prediction.git",
       "web": "https://fifa-predictions.netlify.app/",
+      "figma": null
+    },
+    {
+      "title": "E-Commerce",
+      "description": "Built a full-stack e-commerce platform using Next.js and NestJS, enabling product browsing, cart management, order placement, and payments via eSewa and COD. Developed an admin dashboard for managing products, categories, inventory, and orders, with authentication, and role-based access control.",
+      "image": "images/ecom.png",
+      "tags": [
+        "Next.js",
+        "MongoDB",
+        "NestJS",
+        "TypeScript",
+        "TanStack Query"
+      ],
+      "github": "https://github.com/aakashstha1/e-commerce_frontend_next.git",
+      "web": null,
       "figma": null
     },
     {
