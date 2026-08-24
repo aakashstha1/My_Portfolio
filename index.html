@@ -40,44 +40,34 @@
       aria-live="polite"
       aria-label="Loading portfolio"
     >
-      <div class="loader-grid" aria-hidden="true"></div>
- 
       <div class="loader-content">
-        <div class="loader-ring-wrap" aria-hidden="true">
-          <svg class="loader-ring" viewBox="0 0 120 120">
-            <circle class="loader-ring-track" cx="60" cy="60" r="52" />
-            <circle
-              id="loader-ring-fill"
-              class="loader-ring-fill"
-              cx="60"
-              cy="60"
-              r="52"
-            />
-          </svg>
-          <div class="loader-logo">
-            <span class="accent">&lt;</span>SKY<span class="accent"
-              >/&gt;</span
-            >
-          </div>
+        <div class="loader-logo">
+          <span class="accent">&lt;</span>SKY<span class="accent">/&gt;</span>
         </div>
- 
-        <div class="loader-terminal" aria-hidden="true">
-          <div class="loader-terminal-bar">
-            <span class="dot dot-r"></span>
-            <span class="dot dot-y"></span>
-            <span class="dot dot-g"></span>
-            <span class="loader-terminal-title">build.log</span>
-          </div>
-          <div class="loader-terminal-body" id="loader-terminal-body"></div>
+        <div class="loader-bar-wrap" aria-hidden="true">
+          <div class="loader-bar"></div>
         </div>
- 
-        <div class="loader-percent" id="loader-percent" aria-hidden="true">
-          0%
-        </div>
- 
-        <span class="sr-only" id="loader-sr-status">Loading, please wait</span>
+        <p class="loader-text">Cooking Design...</p>
       </div>
     </div>
+    <!-- Cursor dot -->
+    <div id="cursor"></div>
+ 
+    <!-- Blobs -->
+    <div
+      class="blob"
+      style="width: 600px; height: 600px; top: -200px; left: -150px"
+    ></div>
+    <div
+      class="blob"
+      style="
+        width: 500px;
+        height: 500px;
+        bottom: 10%;
+        right: -100px;
+        background: #818cf8;
+      "
+    ></div>
     
 
     <!-- Cursor dot -->

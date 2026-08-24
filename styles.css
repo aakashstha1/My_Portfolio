@@ -657,99 +657,37 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 42%, #10121a 0%, #0a0a0f 70%);
-  overflow: hidden;
-  clip-path: circle(150% at 50% 50%);
-  transition: clip-path 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+  background: #0a0a0f;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
 }
 #loader.hide {
-  clip-path: circle(0% at 50% 50%);
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
+/* Repeat visits within the same tab session: skip the loader with
+   zero flash — no animation, no delay. */
+html.no-loader #loader {
+  display: none !important;
+}
+html.no-loader body.loading {
+  overflow: visible;
+}
+ 
 .loader-content {
-  position: relative;
-  z-index: 1;
-  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
-}
-.fonts-loaded .loader-content {
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-/* Subtle moving grid for depth */
-.loader-grid {
-  position: absolute;
-  inset: -50%;
-  background-image: linear-gradient(
-      color-mix(in srgb, #6ee7b7 6%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, #6ee7b7 6%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 42px 42px;
-  animation: gridDrift 12s linear infinite;
-  -webkit-mask-image: radial-gradient(
-    circle at 50% 50%,
-    black 0%,
-    transparent 68%
-  );
-  mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 68%);
-  opacity: 0.6;
-}
-@keyframes gridDrift {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(42px, 42px);
-  }
-}
-
-/* ── Progress ring + logo ─────────────────────────────────────── */
-.loader-ring-wrap {
-  position: relative;
-  width: 116px;
-  height: 116px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.loader-ring {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-}
-.loader-ring-track {
-  fill: none;
-  stroke: color-mix(in srgb, #6ee7b7 14%, transparent);
-  stroke-width: 3;
-}
-.loader-ring-fill {
-  fill: none;
-  stroke: #6ee7b7;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 326.7;
-  stroke-dashoffset: 326.7;
-  filter: drop-shadow(0 0 6px color-mix(in srgb, #6ee7b7 70%, transparent));
-  will-change: stroke-dashoffset;
+  gap: 24px;
 }
 .loader-logo {
   font-family: "Space Grotesk", "Syne", sans-serif;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #f0f0f5;
-  letter-spacing: 0.01em;
-  animation: pulseLogo 1.8s ease-in-out infinite;
+  animation: pulseLogo 1.5s ease-in-out infinite;
 }
 .loader-logo span {
   color: #6ee7b7;
@@ -761,117 +699,77 @@ section {
     transform: scale(1);
   }
   50% {
-    opacity: 0.72;
+    opacity: 0.6;
     transform: scale(0.97);
   }
 }
-
-/* ── Terminal build-log panel ─────────────────────────────────── */
-.loader-terminal {
-  width: 264px;
-  border-radius: 10px;
-  background: color-mix(in srgb, #ffffff 4%, #0a0a0f);
-  border: 1px solid color-mix(in srgb, #6ee7b7 15%, transparent);
+ 
+.loader-bar-wrap {
+  width: 180px;
+  height: 3px;
+  border-radius: 999px;
+  background: color-mix(in srgb, #6ee7b7 15%, transparent);
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
-.loader-terminal-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 10px;
-  background: color-mix(in srgb, #ffffff 3%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, #ffffff 6%, transparent);
-}
-.loader-terminal-bar .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.dot-r {
-  background: #ff5f57;
-}
-.dot-y {
-  background: #febc2e;
-}
-.dot-g {
-  background: #28c840;
-}
-.loader-terminal-title {
-  margin-left: 6px;
-  font-size: 0.68rem;
-  color: #8b8b9c;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.02em;
-}
-.loader-terminal-body {
-  padding: 12px 14px;
-  min-height: 120px;
-  max-height: 120px;
-  overflow: hidden;
-  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
-  font-size: 0.72rem;
-  line-height: 1.7;
-  color: #b7f8de;
-}
-.loader-terminal-line {
-  display: flex;
-  gap: 6px;
-  white-space: pre;
-}
-.loader-terminal-line .prompt {
-  color: color-mix(in srgb, #6ee7b7 55%, transparent);
-  flex-shrink: 0;
-}
-.loader-terminal-line .ok {
-  color: #6ee7b7;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.loader-terminal-cursor {
-  display: inline-block;
-  width: 6px;
-  height: 12px;
+.loader-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
   background: #6ee7b7;
-  animation: cursorBlink 0.9s steps(1) infinite;
+  box-shadow: 0 0 10px color-mix(in srgb, #6ee7b7 70%, transparent);
+  animation: fillBar 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
-@keyframes cursorBlink {
-  50% {
-    opacity: 0;
+@keyframes fillBar {
+  0% {
+    width: 0%;
+  }
+  60% {
+    width: 65%;
+  }
+  85% {
+    width: 88%;
+  }
+  100% {
+    width: 100%;
   }
 }
-
-/* ── Percent counter ───────────────────────────────────────────── */
-.loader-percent {
-  font-family: "Space Grotesk", "Syne", sans-serif;
-  font-weight: 700;
-  font-size: 0.92rem;
-  letter-spacing: 0.08em;
-  color: #6ee7b7;
-  font-variant-numeric: tabular-nums;
+ 
+.loader-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #8b8b9c;
+  letter-spacing: 0.02em;
+  animation: fadeInOut 1.8s ease-in-out infinite;
 }
-
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+ 
 @media (prefers-reduced-motion: reduce) {
-  .loader-grid,
   .loader-logo,
-  .loader-terminal-cursor {
+  .loader-bar,
+  .loader-text {
     animation: none;
   }
+  .loader-bar {
+    width: 100%;
+  }
   #loader {
-    clip-path: none !important;
     transition: opacity 0.3s ease;
   }
-  #loader.hide {
-    opacity: 0;
-  }
 }
-
+ 
 /* Prevent scroll while loading */
 body.loading {
   overflow: hidden;
 }
-
+ 
 /* ── Ripple micro-interaction (buttons) ─────────────── */
 .cta-btn,
 .proj-btn,

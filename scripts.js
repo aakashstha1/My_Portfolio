@@ -23,99 +23,33 @@
     figma: `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z"/><path d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z"/><path d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z"/><path d="M12 0h4c2.208 0 4 1.792 4 4s-1.792 4-4 4h-4V0z"/><path d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z"/></svg>`,
   };
 
-  function setupLoader() {
-    document.body.classList.add("loading");
-    document.fonts.ready.then(() => {
-      document.body.classList.add("fonts-loaded");
-    });
+ function setupLoader() {
+   // Repeat visits this session (tab): loader already played once —
+   // skip it entirely and show the page immediately.
+   if (document.documentElement.classList.contains("no-loader")) {
+     document.body.classList.add("page-entered");
+     return;
+   }
 
-    function finishLoader() {
-      const loader = document.getElementById("loader");
-      loader.classList.add("hide");
-      loader.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("loading");
-      document.body.classList.add("page-entered");
-    }
+   document.body.classList.add("loading");
+   document.fonts.ready.then(() => {
+     document.body.classList.add("fonts-loaded");
+   });
 
-    window.addEventListener("load", () => {
-      const ring = document.getElementById("loader-ring-fill");
-      const percentEl = document.getElementById("loader-percent");
-      const termBody = document.getElementById("loader-terminal-body");
-      const srStatus = document.getElementById("loader-sr-status");
-
-      // Accessible / reduced-motion fallback: skip the simulated build
-      // sequence entirely and close quickly.
-      if (reduceMotion || !ring || !percentEl || !termBody) {
-        setTimeout(finishLoader, 300);
-        return;
-      }
-
-      const CIRC = 2 * Math.PI * 52;
-      const DURATION = 2800; // ms — total simulated "build" time
-      const STEPS = [
-        { at: 0, text: "booting environment" },
-        { at: 0.22, text: "loading fonts & assets" },
-        { at: 0.46, text: "compiling components" },
-        { at: 0.7, text: "optimizing render tree" },
-        { at: 0.92, text: "ready" },
-      ];
-      let stepIndex = 0;
-      let activeLine = null;
-      let charIndex = 0;
-
-      function typeChar(text, onDone) {
-        if (!activeLine) return;
-        const span = activeLine.querySelector(".loader-terminal-text");
-        span.textContent = text.slice(0, charIndex);
-        if (charIndex <= text.length) {
-          charIndex++;
-          setTimeout(() => typeChar(text, onDone), 14);
-        } else {
-          onDone();
-        }
-      }
-
-      function startLine(step, isLast) {
-        charIndex = 0;
-        activeLine = document.createElement("div");
-        activeLine.className = "loader-terminal-line";
-        activeLine.innerHTML =
-          '<span class="prompt">&gt;</span><span class="loader-terminal-text"></span><span class="loader-terminal-cursor"></span>';
-        termBody.appendChild(activeLine);
-        srStatus.textContent = `Loading: ${step.text}`;
-        typeChar(step.text, () => {
-          activeLine.querySelector(".loader-terminal-cursor")?.remove();
-          if (!isLast) {
-            const ok = document.createElement("span");
-            ok.className = "ok";
-            ok.textContent = "✓";
-            activeLine.appendChild(ok);
-          }
-        });
-      }
-
-      const start = performance.now();
-      function frame(now) {
-        const t = Math.min((now - start) / DURATION, 1);
-        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-
-        ring.style.strokeDashoffset = String(CIRC * (1 - eased));
-        percentEl.textContent = `${Math.round(eased * 100)}%`;
-
-        while (stepIndex < STEPS.length && eased >= STEPS[stepIndex].at) {
-          startLine(STEPS[stepIndex], stepIndex === STEPS.length - 1);
-          stepIndex++;
-        }
-
-        if (t < 1) {
-          requestAnimationFrame(frame);
-        } else {
-          setTimeout(finishLoader, 450);
-        }
-      }
-      requestAnimationFrame(frame);
-    });
-  }
+   window.addEventListener("load", () => {
+     const delay = reduceMotion ? 300 : 2400;
+     setTimeout(() => {
+       const loader = document.getElementById("loader");
+       loader.classList.add("hide");
+       loader.setAttribute("aria-hidden", "true");
+       document.body.classList.remove("loading");
+       document.body.classList.add("page-entered");
+       try {
+         sessionStorage.setItem("loaderShown", "1");
+       } catch (e) {}
+     }, delay);
+   });
+ }
   /* ── Fetch data & render ───────────────────────────────────────── */
   async function init() {
     setupLoader();
