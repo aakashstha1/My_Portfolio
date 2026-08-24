@@ -23,33 +23,33 @@
     figma: `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z"/><path d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z"/><path d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z"/><path d="M12 0h4c2.208 0 4 1.792 4 4s-1.792 4-4 4h-4V0z"/><path d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z"/></svg>`,
   };
 
- function setupLoader() {
-   // Repeat visits this session (tab): loader already played once —
-   // skip it entirely and show the page immediately.
-   if (document.documentElement.classList.contains("no-loader")) {
-     document.body.classList.add("page-entered");
-     return;
-   }
+  function setupLoader() {
+    // Repeat visits this session (tab): loader already played once —
+    // skip it entirely and show the page immediately.
+    if (document.documentElement.classList.contains("no-loader")) {
+      document.body.classList.add("page-entered");
+      return;
+    }
 
-   document.body.classList.add("loading");
-   document.fonts.ready.then(() => {
-     document.body.classList.add("fonts-loaded");
-   });
+    document.body.classList.add("loading");
+    document.fonts.ready.then(() => {
+      document.body.classList.add("fonts-loaded");
+    });
 
-   window.addEventListener("load", () => {
-     const delay = reduceMotion ? 300 : 2400;
-     setTimeout(() => {
-       const loader = document.getElementById("loader");
-       loader.classList.add("hide");
-       loader.setAttribute("aria-hidden", "true");
-       document.body.classList.remove("loading");
-       document.body.classList.add("page-entered");
-       try {
-         sessionStorage.setItem("loaderShown", "1");
-       } catch (e) {}
-     }, delay);
-   });
- }
+    window.addEventListener("load", () => {
+      const delay = reduceMotion ? 300 : 2400;
+      setTimeout(() => {
+        const loader = document.getElementById("loader");
+        loader.classList.add("hide");
+        loader.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("loading");
+        document.body.classList.add("page-entered");
+        try {
+          sessionStorage.setItem("loaderShown", "1");
+        } catch (e) {}
+      }, delay);
+    });
+  }
   /* ── Fetch data & render ───────────────────────────────────────── */
   async function init() {
     setupLoader();
@@ -521,26 +521,39 @@
         avatar: "https://api.dicebear.com/7.x/lorelei/svg?seed=Alex",
       },
       about: {
-        bio: "I am a BSc. CSIT student at Godawari College. I am passionate about coding and enjoy exploring new technologies in my free time. I am always eager to learn and grow, aiming to build a successful career while making a positive impact through my work. I actively look for opportunities to challenge myself and contribute meaningfully.",
+        bio: "Passionate about coding and exploring emerging technologies, with a strong focus on continuous learning and growth. I aim to build a career centered on meaningful, impactful work, and welcome opportunities to challenge myself while contributing real value to a team.",
         highlights: [
-          "Entry-level Backend Developer",
-          "Quick learner and team collaborator",
-          "Open to internship and junior roles",
-          "Actively seeking growth opportunities",
+          "Quick learner and effective team collaborator",
+          "Open to internship and junior developer roles",
+          "Actively seeking opportunities for professional growth",
+          "Focused on writing clean, efficient code",
         ],
-        cv: "docs/Aakash-Shrestha-cv.pdf",
+        cv: "docs/resume.pdf",
       },
       skills: [
         {
+          category: "Languages",
+          items: ["JavaScript", "TypeScript", "Python"],
+        },
+        {
           category: "Frontend",
-          items: ["HTML", "CSS", "React", "Next", "Javascript"],
+          items: ["HTML", "CSS", "React", "Next.js", "TanStack Query"],
         },
         {
           category: "Backend",
-          items: ["Node.js", "Express", "Nest", "MongoDB", "MySQL"],
+          items: [
+            "Node.js",
+            "Express",
+            "NestJS",
+            "FastAPI",
+            "MongoDB",
+            "MySQL",
+          ],
         },
-        { category: "Design", items: ["Figma"] },
-        { category: "DevOps", items: ["Docker"] },
+        {
+          category: "Concepts",
+          items: ["REST API", "Redis", "DSA", "OOP", "Docker"],
+        },
       ],
       experiences: [
         {
@@ -554,63 +567,98 @@
       ],
       projects: [
         {
-          title: "MERN Authentication System",
+          title: "Quill - Blogging Platform",
           description:
-            "Built a secure authentication system using the MERN stack with user registration, login, and JWT-based authorization. Implemented protected routes and password hashing to ensure secure user access.",
-          image: "images/p1.png",
-          tags: ["React", "Node.js", "Express", "MongoDB"],
-          github: "https://github.com/aakashstha1/MERN_Authentication.git",
-          web: "https://mern-authentication-ppit.onrender.com/signup",
-          figma: null,
-        },
-        {
-          title: "EduPal-FYP",
-          description:
-            "Developed a full-stack e-learning platform with user authentication, course management, and interactive learning features to enhance digital education experience.",
-          image: "images/p2.png",
-          tags: ["React", "Node.js", "Express", "MongoDB"],
-          github: "https://github.com/aakashstha1/EduPal_FYP.git",
+            "A full-stack MERN blogging platform with TanStack Query, a TF-IDF recommendation engine, and an admin dashboard for managing posts, categories, tags, and users. Built to streamline content publishing, moderation, and discovery.",
+          image: "images/blog.png",
+          tags: [
+            "React.js",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "TF-IDF",
+            "TanStack Query",
+          ],
+          github: "https://github.com/aakashstha1/blogging-platform.git",
           web: null,
           figma: null,
         },
         {
-          title: "Blog-WriteWaves",
+          title: "ShortNCopy",
           description:
-            "Created a full-stack blog platform using MySQL for database management, supporting post creation, editing, and user-based content management.",
-          image: "images/p5.png",
-          tags: ["Reactjs", "Node.js", "Express", "MySQL"],
-          github: "https://github.com/aakashstha1/Blog_App.git",
+            "A full-stack URL shortener built for speed and zero friction - no sign-up required. Users generate and share shortened links instantly, with a Next.js frontend, Express/MongoDB backend, and TanStack Query handling data fetching, all written in TypeScript for type safety end to end.",
+          image: "images/shortNcopy.png",
+          tags: [
+            "Next.js",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "TypeScript",
+            "TanStack Query",
+          ],
+          github: "https://github.com/aakashstha1/shortNcopy.git",
+          web: "https://shortncopy.netlify.app/",
+          figma: null,
+        },
+        {
+          title: "RAG",
+          description:
+            "Built a RAG-based document Q&A system using FastAPI, ChromaDB, Sentence Transformers, and Groq LLM, enabling users to upload PDFs, extract and chunk content, generate embeddings, and semantically retrieve relevant information. Implemented context-aware question answering with source citations and support for multiple documents.",
+          image: "images/rag.png",
+          tags: [
+            "Python",
+            "FastAPI",
+            "ChromaDB",
+            "Sentence Transformers",
+            "Groq",
+          ],
+          github: "https://github.com/aakashstha1/rag-system.git",
           web: null,
           figma: null,
         },
         {
-          title: "Movie Recommender",
+          title: "FIFA Prediction",
           description:
-            "Developed a movie recommendation system using Python that suggests movies based on user preferences and similarity algorithms.",
-          image: "images/p6.png",
-          tags: ["Python", "Streamlit", "Pandas", "Numpy"],
-          github: "https://github.com/aakashstha1/movie_recommender.git",
+            "A real-time World Cup prediction platform where fans compete by picking match winners. Built on the MERN stack with TanStack Query, it tracks scores automatically as results come in and surfaces a live leaderboard, turning tournament-watching into a running competition among users.",
+          image: "images/fifa.png",
+          tags: ["MongoDB", "Express.js", "React", "Node.js", "TanStack Query"],
+          github: "https://github.com/aakashstha1/Fifa_Prediction.git",
+          web: "https://fifa-predictions.netlify.app/",
+          figma: null,
+        },
+        {
+          title: "E-Commerce",
+          description:
+            "Built a full-stack e-commerce platform using Next.js and NestJS, enabling product browsing, cart management, order placement, and payments via eSewa and COD. Developed an admin dashboard for managing products, categories, inventory, and orders, with authentication, and role-based access control.",
+          image: "images/ecom.png",
+          tags: [
+            "Next.js",
+            "MongoDB",
+            "NestJS",
+            "TypeScript",
+            "TanStack Query",
+          ],
+          github: "https://github.com/aakashstha1/e-commerce_frontend_next.git",
           web: null,
           figma: null,
         },
         {
-          title: "Time Capsule",
+          title: "Tenant Bill Management System",
           description:
-            "Built a digital time capsule application allowing users to securely store and seal text, images, audio, and video files for future access.",
-          image: "images/p7.png",
-          tags: ["Reactjs", "MongoDB", "Node.js", "Express"],
-          github: "https://github.com/aakashstha1/Time-Capsule.git",
-          web: "https://time-capsule-4fhl.onrender.com/",
-          figma: null,
-        },
-        {
-          title: "Quizzy",
-          description:
-            "Developed an interactive quiz game using Next.js with dynamic questions, score tracking, and responsive UI for engaging user experience.",
-          image: "images/p8.png",
-          tags: ["Next.js", "Open Trivia Database API", "React"],
-          github: "https://github.com/aakashstha1/quizzy.git",
-          web: "https://quizzy-dpxq.onrender.com",
+            "A full-stack property management platform for landlords to track tenants, rent payments, electricity usage, and billing history, featuring Recharts-powered analytics dashboards for financial insights.",
+          image: "images/p10.png",
+          tags: [
+            "React",
+            "TypeScript",
+            "TanStack Query",
+            "Zustand",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Recharts",
+          ],
+          github: "https://github.com/aakashstha1/Bill-Management.git",
+          web: null,
           figma: null,
         },
       ],
