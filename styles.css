@@ -394,11 +394,13 @@ section {
   position: relative;
 }
 .proj-img-wrap img {
-  transition: transform 0.5s ease, filter 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
 }
 .card:hover .proj-img-wrap img {
   transform: scale(1.05);
-  filter: brightness(0.);
+  filter: brightness(0);
 }
 .proj-img-overlay {
   position: absolute;
@@ -675,7 +677,7 @@ html.no-loader #loader {
 html.no-loader body.loading {
   overflow: visible;
 }
- 
+
 .loader-content {
   display: flex;
   flex-direction: column;
@@ -683,7 +685,7 @@ html.no-loader body.loading {
   gap: 24px;
 }
 .loader-logo {
-  font-family: "Space Grotesk", "Syne", sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
   color: #f0f0f5;
@@ -703,7 +705,7 @@ html.no-loader body.loading {
     transform: scale(0.97);
   }
 }
- 
+
 .loader-bar-wrap {
   width: 180px;
   height: 3px;
@@ -733,7 +735,7 @@ html.no-loader body.loading {
     width: 100%;
   }
 }
- 
+
 .loader-text {
   font-family: "Inter", sans-serif;
   font-size: 0.85rem;
@@ -750,7 +752,7 @@ html.no-loader body.loading {
     opacity: 1;
   }
 }
- 
+
 @media (prefers-reduced-motion: reduce) {
   .loader-logo,
   .loader-bar,
@@ -764,12 +766,12 @@ html.no-loader body.loading {
     transition: opacity 0.3s ease;
   }
 }
- 
+
 /* Prevent scroll while loading */
 body.loading {
   overflow: hidden;
 }
- 
+
 /* ── Ripple micro-interaction (buttons) ─────────────── */
 .cta-btn,
 .proj-btn,
