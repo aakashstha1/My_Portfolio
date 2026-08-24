@@ -686,7 +686,7 @@ html.no-loader body.loading {
 }
 .loader-logo {
   font-family: "Syne", sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #f0f0f5;
   animation: pulseLogo 1.5s ease-in-out infinite;
