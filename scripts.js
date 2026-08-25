@@ -388,11 +388,11 @@
     navigator.clipboard
       .writeText(`${text} ${author}`)
       .then(() => {
-        msg.textContent = "✅ Copied to clipboard!";
+        msg.textContent = "Copied to clipboard!";
         setTimeout(() => (msg.textContent = ""), 2000);
       })
       .catch(() => {
-        msg.textContent = "❌ Copy failed";
+        msg.textContent = "Copy failed";
         setTimeout(() => (msg.textContent = ""), 2000);
       });
   }
