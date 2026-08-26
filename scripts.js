@@ -583,23 +583,23 @@
           web: null,
           figma: null,
         },
-        {
-          title: "ShortNCopy",
-          description:
-            "A full-stack URL shortener built for speed and zero friction - no sign-up required. Users generate and share shortened links instantly, with a Next.js frontend, Express/MongoDB backend, and TanStack Query handling data fetching, all written in TypeScript for type safety end to end.",
-          image: "images/shortNcopy.png",
-          tags: [
-            "Next.js",
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "TypeScript",
-            "TanStack Query",
-          ],
-          github: "https://github.com/aakashstha1/shortNcopy.git",
-          web: "https://shortncopy.netlify.app/",
-          figma: null,
-        },
+        // {
+        //   title: "ShortNCopy",
+        //   description:
+        //     "A full-stack URL shortener built for speed and zero friction - no sign-up required. Users generate and share shortened links instantly, with a Next.js frontend, Express/MongoDB backend, and TanStack Query handling data fetching, all written in TypeScript for type safety end to end.",
+        //   image: "images/shortNcopy.png",
+        //   tags: [
+        //     "Next.js",
+        //     "Node.js",
+        //     "Express",
+        //     "MongoDB",
+        //     "TypeScript",
+        //     "TanStack Query",
+        //   ],
+        //   github: "https://github.com/aakashstha1/shortNcopy.git",
+        //   web: "https://shortncopy.netlify.app/",
+        //   figma: null,
+        // },
         {
           title: "RAG",
           description:
